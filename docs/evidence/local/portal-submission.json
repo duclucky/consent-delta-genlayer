@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-03",
+  "observation": "Authenticated Chrome Portal UI, My Submissions filtered to ConsentDelta, expanded details and locked project revision",
+  "submittedBy": "owner through browser",
+  "category": "Projects",
+  "projectName": "ConsentDelta",
+  "submissionId": "a1e356a1-522f-4c09-bcfd-29ccf09c84ce",
+  "submissionStatus": "Pending review",
+  "projectId": 1303,
+  "revision": 1,
+  "projectState": "Submitted",
+  "projectSubmittedDisplay": "Oct 3, 2026, 3:03 PM",
+  "projectUrl": "https://portal.genlayer.foundation/builders/explorer/manage/1303/",
+  "submissionListUrl": "https://portal.genlayer.foundation/my-submissions?q=ConsentDelta",
+  "requiredFields": "7/7",
+  "howToSteps": 9,
+  "howToSavedVerified": true,
+  "evidenceItems": 3,
+  "descriptionCharacters": 959,
+  "oneLinerCharacters": 154,
+  "accepted": false,
+  "publicExplorerListing": "Not yet published; submitted revision is locked in review.",
+  "optionalFields": "Logo upload did not complete through browser file chooser; saved project has a default logo. Optional demo video omitted.",
+  "evidenceLinks": [
+    "https://github.com/duclucky/consent-delta-genlayer",
+    "https://github.com/duclucky/consent-delta-genlayer/blob/main/docs/evidence/studio-dev/BROWSER-LIFECYCLE.md",
+    "https://explorer-studio-dev.genlayer.com/address/0x18F1689CE9241894433F44b41989C46E45a13DC5"
+  ]
+}

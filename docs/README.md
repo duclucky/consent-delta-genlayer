@@ -3,7 +3,7 @@
 ## Identity
 
 - Idea: IDEA-035; project/slug: ConsentDelta / consent-delta.
-- Category: Projects. Status: BUILT_AND_DEPLOYED; owner-authorized Chrome/OKX primary journey plus API peers verified; final submission pending.
+- Category: Projects. Status: BUILT_AND_DEPLOYED; owner-authorized Chrome/OKX primary journey plus API peers verified; submitted to Portal; Pending review (project 1303).
 - Public repository: https://github.com/duclucky/consent-delta-genlayer.
 - Network: Studio Dev, chain 61997; runtime/template compatibility verified read-only.
 
@@ -354,7 +354,7 @@ Evidence belongs only in `docs/evidence/studio-dev/`; local tests in `docs/evide
 
 ## Honest limitations and evidence status
 
-Initial Phase 3A/3B baseline: 23 frontend tests, TypeScript/build and wallet-less form/modal/responsive/contrast checks passed. Current validation: 127 direct tests, 24 tooling tests and 40 frontend tests, recognized single contract, TypeScript/build. Studio Dev: 17 finalized lifecycle parents, three finalized 2 GEN native children, all nine writes, version 2, funded/withdrawn 6 GEN and final native balance 0 GEN. Production browser canonical reads, HTTP/body/root, chain and fee proxy pass. CI runs the same checks on public commits; current-run evidence is checked separately at the final audit. Five primary Chrome/OKX writes, three API peer actions and a fourth native 2 GEN child are separately verified in browser-acceptance.json under the owner-authorized hybrid scope. Alternative browser signatures are not claimed. Final Portal submission is pending. Target-runtime selection leader simulations are not relabeled independent-validator consensus; the live reviews have their own finalized receipts. V1 constitutive-only bounds remain explicit. No legal advice, external adoption or real-world enforcement is asserted.
+Initial Phase 3A/3B baseline: 23 frontend tests, TypeScript/build and wallet-less form/modal/responsive/contrast checks passed. Current validation: 127 direct tests, 24 tooling tests and 40 frontend tests, recognized single contract, TypeScript/build. Studio Dev: 17 finalized lifecycle parents, three finalized 2 GEN native children, all nine writes, version 2, funded/withdrawn 6 GEN and final native balance 0 GEN. Production browser canonical reads, HTTP/body/root, chain and fee proxy pass. CI runs the same checks on public commits; current-run evidence is checked separately at the final audit. Five primary Chrome/OKX writes, three API peer actions and a fourth native 2 GEN child are separately verified in browser-acceptance.json under the owner-authorized hybrid scope. Alternative browser signatures are not claimed. Portal submission is recorded as Pending review (project 1303); all nine How-to steps were verified in its locked revision. Target-runtime selection leader simulations are not relabeled independent-validator consensus; the live reviews have their own finalized receipts. V1 constitutive-only bounds remain explicit. No legal advice, external adoption or real-world enforcement is asserted.
 
 ## Kill criteria
 
