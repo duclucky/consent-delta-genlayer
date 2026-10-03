@@ -4,11 +4,13 @@ import { CalldataAddress } from 'genlayer-js/types';
 import { hexToBytes } from 'viem';
 import { readFile } from 'node:fs/promises';
 import { network, authorizedActors, saveEvidence } from './network.mjs';
+async function main(){
 const deployment=JSON.parse(await readFile('docs/evidence/studio-dev/deployment.json','utf8'));
 const actors=await authorizedActors();
 const args=['CD-live-035','Shared research charter',...actors.slice(1).map(actor=>new CalldataAddress(hexToBytes(actor.account.address))),'A may read the shared research dataset.','B may redistribute the shared research dataset without paying a fee.','C must publish attribution when using the shared research dataset.',BigInt(Math.floor(Date.now()/1000)+21600)];
 const data=abi.transactions.serialize([abi.calldata.encode(abi.calldata.makeCalldataObject('create_charter',args)),false]);
-const response=await fetch(network.icRpc,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'sim_call',params:[{type:'write',from:actors[0].account.address,to:deployment.address,data,transaction_hash_variant:'latest-final'}]})});
+const currentClock=process.argv.includes('--current-clock');
+const response=await fetch(network.icRpc,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'sim_call',params:[{type:'write',from:actors[0].account.address,to:deployment.address,data,transaction_hash_variant:'latest-final',...(currentClock?{sim_config:{genvm_datetime:new Date().toISOString()}}:{})}]})});
 const envelope=await response.json();const receipt=envelope.result??envelope.error?.data?.receipt??envelope.error;
 const code=await readFile('contracts/consent_delta.py','utf8');
 const reasons=[...code.matchAll(/"([A-Z][A-Z_]{3,})"/g)].map(match=>match[1]);
@@ -33,7 +35,38 @@ const safePatterns=[/has no attribute ['"]get_timestamp['"]/g,/Floating point[^\
 const diagnostics=JSON.stringify(receipt.genvm_result??{});output.safePatterns=safePatterns.flatMap(pattern=>diagnostics.match(pattern)??[]).filter(value=>!/[a-fA-F0-9]{32}|key|secret|token|config/i.test(value));
 output.exceptionNames=[...new Set(diagnostics.match(/\b[A-Za-z_][A-Za-z0-9_.]{0,60}(?:Error|Exception)\b/g)??[])];
 output.clockFailureKind=['has no attribute','not supported','not implemented','unknown','undefined','float','floating','invalid','builtin','error','panic'].filter(term=>diagnostics.toLowerCase().includes(term));
+output.vmErrorCode=Number.isInteger(receipt.genvm_result?.error_code)?receipt.genvm_result.error_code:null;
+output.vmErrorFieldTypes=Object.fromEntries(['raw_error','error_description','data_fees_remaining','data_fees_consumed'].map(key=>[key,typeof receipt.genvm_result?.[key]]));
+output.resultType=typeof receipt.result;
+output.resultLength=typeof receipt.result==='string'?receipt.result.length:null;
+if(typeof receipt.result==='string'&&receipt.result.length<1000&&/^[A-Za-z0-9+/=]+$/.test(receipt.result)) {
+ const decoded=Buffer.from(receipt.result,'base64');
+ const reason=decoded.subarray(1).toString('utf8');
+ output.resultTag=decoded[0];
+ if(reason.length<=180&&/^[A-Za-z0-9_ .:'"()<>-]+$/.test(reason)&&!/[a-fA-F0-9]{32}|key|secret|token|config/i.test(reason)) output.decodedSafeReason=reason;
+}
+for(const key of ['raw_error','error_description']) {
+ const value=receipt.genvm_result?.[key];
+ if(typeof value==='string'&&value.length<=180&&/^[A-Za-z0-9_ .:'"()<>-]+$/.test(value)&&!/[a-fA-F0-9]{32}|key|secret|token|config/i.test(value))output[key]=value;
+}
 const terminalLine=receipt.genvm_result?.stderr?.trim().split('\n').at(-1);
 if(typeof terminalLine==='string'&&terminalLine.length<=180&&/^[A-Za-z0-9_ .:'"()<>-]+$/.test(terminalLine)&&!/[a-fA-F0-9]{32}|key|secret|token|config/i.test(terminalLine))output.safeTerminalReason=terminalLine;
 if(typeof receipt.result==='string'&&receipt.result.length<=180&&/^[a-zA-Z0-9_ .:'"()<>-]+$/.test(receipt.result)&&!/[a-fA-F0-9]{32}|key|secret|token|config/i.test(receipt.result)) output.safeErrorReason=receipt.result;
-await saveEvidence('create-diagnosis.json',output);console.log(JSON.stringify(output));
+output.address=deployment.address;
+output.currentSimulationClock=currentClock;
+output.requestDeadlineISO=new Date(Number(args.at(-1))*1000).toISOString();
+output.requestDeadlineEpoch=Number(args.at(-1));
+output.localEpoch=Math.floor(Date.now()/1000);
+output.calldataType=typeof receipt.calldata;
+if(typeof receipt.calldata==='string') {
+ try {
+  const decoded=abi.calldata.decode(Buffer.from(receipt.calldata.replace(/^0x/,''),receipt.calldata.startsWith('0x')?'hex':'base64'));
+  const decodedArgs=decoded instanceof Map?decoded.get('args'):decoded.args;
+  const bound=decodedArgs?.at(-1);
+  output.decodedArgumentCount=decodedArgs?.length??null;
+  if(typeof bound==='bigint'||typeof bound==='number')output.decodedDeadlineEpoch=String(bound);
+ }catch{output.calldataDecoded=false;}
+}
+await saveEvidence(`create-diagnosis-${deployment.address.toLowerCase()}${currentClock?'-current-clock':''}.json`,output);console.log(JSON.stringify(output));
+}
+main().catch(()=>{console.error('Read-only diagnosis unavailable; raw SDK/RPC errors are suppressed.');process.exitCode=1;});

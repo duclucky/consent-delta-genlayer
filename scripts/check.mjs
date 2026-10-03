@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 const python = process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python';
@@ -11,12 +11,12 @@ const checks = [
   [python, ['scripts/genvm_lint.py', 'check', 'contracts/consent_delta.py']],
   [python, ['-m', 'pytest', 'tests/direct', '-q', '--tb=short']],
   [process.execPath, ['--check', 'scripts/check.mjs']],
-  [process.execPath, ['--test', 'scripts/receipt.test.mjs', 'scripts/rpc-proxy.test.mjs']],
+  [process.execPath, ['--test', 'scripts/receipt.test.mjs', 'scripts/rpc-proxy.test.mjs', 'scripts/write-quote.test.mjs', 'scripts/fee-observation.test.mjs', 'scripts/native-transfer.test.mjs']],
   [process.execPath, [path.join(path.dirname(process.execPath), 'node_modules/npm/bin/npm-cli.js'), '--workspace', 'frontend', 'run', 'check']],
 ];
 // npm_execpath is the actual CLI used by npm (including bundled runtimes).
 if (process.env.npm_execpath) checks[4][1][0] = process.env.npm_execpath;
-for (const script of ['network', 'inspect', 'smoke', 'deploy-quote', 'deploy', 'lifecycle', 'clock-probe', 'diagnose-create', 'archive-broken']) checks.unshift([process.execPath, ['--check', `scripts/${script}.mjs`]]);
+for (const script of readdirSync('scripts').filter(file => file.endsWith('.mjs'))) checks.unshift([process.execPath, ['--check', `scripts/${script}`]]);
 for (const [command, args] of checks) {
   const result = spawnSync(command, args, { env, stdio: 'inherit' });
   if (result.error) throw result.error;

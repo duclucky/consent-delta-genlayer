@@ -1,0 +1,73 @@
+{
+  "command": "node scripts/diagnose-create.mjs",
+  "signed": false,
+  "rpcErrorCode": null,
+  "errorFields": [],
+  "detailFields": [],
+  "receiptFields": [
+    "vote",
+    "execution_result",
+    "result",
+    "calldata",
+    "gas_used",
+    "mode",
+    "contract_state",
+    "contract_state_hash",
+    "node_config",
+    "eq_outputs",
+    "pending_transactions",
+    "genvm_result",
+    "processing_time",
+    "nondet_disagree",
+    "execution_stats"
+  ],
+  "resultFields": [],
+  "execution": "SUCCESS",
+  "mode": "leader",
+  "reasons": [],
+  "errorClasses": [],
+  "identifiers": [],
+  "genvmFields": [
+    "stdout",
+    "stderr",
+    "error_code",
+    "raw_error",
+    "error_description",
+    "data_fee_bucket_totals",
+    "data_fees_remaining",
+    "data_fees_consumed"
+  ],
+  "logFieldTypes": {
+    "stdout": {
+      "type": "string",
+      "length": 0
+    },
+    "stderr": {
+      "type": "string",
+      "length": 0
+    }
+  },
+  "safePatterns": [],
+  "exceptionNames": [],
+  "clockFailureKind": [
+    "error"
+  ],
+  "vmErrorCode": null,
+  "vmErrorFieldTypes": {
+    "raw_error": "object",
+    "error_description": "object",
+    "data_fees_remaining": "object",
+    "data_fees_consumed": "object"
+  },
+  "resultType": "string",
+  "resultLength": 4,
+  "resultTag": 0,
+  "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "currentSimulationClock": true,
+  "requestDeadlineISO": "2026-10-03T11:29:47.000Z",
+  "requestDeadlineEpoch": 1791026987,
+  "localEpoch": 1791005389,
+  "calldataType": "string",
+  "decodedArgumentCount": 8,
+  "decodedDeadlineEpoch": "1791026987"
+}

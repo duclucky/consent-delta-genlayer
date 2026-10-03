@@ -1,0 +1,20 @@
+{
+  "command": "npm --workspace frontend run build",
+  "typescript": "PASS",
+  "productionBuild": "PASS",
+  "contractAddress": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "feeProfileMethods": 9,
+  "browserCommand": "CUA rpcTab.goto http://127.0.0.1:5177/charters/CD-live-035 + waitFor Shared research charter + getAXState",
+  "browserOutput": [
+    "CURRENT VERSION 2",
+    "Shared research charter",
+    "Current charter",
+    "Amendment 1",
+    "Amendment 2",
+    "Amendment 3",
+    "Connect your wallet to sign this action."
+  ],
+  "canonicalFixtureUsed": false,
+  "browserWalletSigning": "PENDING_REAL_EVIDENCE",
+  "privateFrontendVariables": false
+}

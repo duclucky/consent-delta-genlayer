@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "network": "studio-dev",
+  "chainId": 61997,
+  "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "sourceCommit": "aa9ea72bae865b6edcfe54030f08861fc5b0d1e7",
+  "measuredAt": "2026-10-03T05:52:47.139Z",
+  "headroomBps": 15000,
+  "methods": {
+    "create_charter": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117961875000000",
+      "totalMessageFees": "0"
+    },
+    "ratify": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117943125000000",
+      "totalMessageFees": "0"
+    },
+    "propose_amendment": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117955500000000",
+      "totalMessageFees": "0"
+    },
+    "review": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "119604750000000",
+      "totalMessageFees": "0"
+    },
+    "consent": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117954000000000",
+      "totalMessageFees": "0"
+    },
+    "withdraw": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "189457875000000",
+      "totalMessageFees": "187500000000000"
+    },
+    "reject": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117945375000000",
+      "totalMessageFees": "0"
+    },
+    "expire": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117945750000000",
+      "totalMessageFees": "0"
+    },
+    "expire_charter": {
+      "leaderTimeunitsAllocation": "150",
+      "validatorTimeunitsAllocation": "300",
+      "rotationsPerRound": "0",
+      "executionBudgetPerRound": "117942750000000",
+      "totalMessageFees": "0"
+    }
+  }
+}

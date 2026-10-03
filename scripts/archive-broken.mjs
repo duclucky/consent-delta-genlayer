@@ -2,6 +2,7 @@
 import { readFile, mkdir, rename } from 'node:fs/promises';
 import path from 'node:path';
 import { network, rpc, verifyNetwork, projectRoot, saveEvidence, gen } from './network.mjs';
+async function main(){
 await verifyNetwork();
 const identity = JSON.parse(await readFile(path.join(projectRoot, 'docs/evidence/studio-dev/deployment.json'), 'utf8'));
 if(identity.network !== network.name || identity.status !== 'ACTIVE') throw new Error('Expected the active broken Studio Dev revision.');
@@ -22,3 +23,5 @@ await saveEvidence('deployment.json', identity);
 await rename(path.join(projectRoot, 'docs/evidence/studio-dev/deployment.json'), path.join(projectRoot, `docs/evidence/studio-dev/revisions/${name}.json`));
 await rename(path.join(projectRoot, 'docs/evidence/studio-dev/lifecycle.json'), path.join(projectRoot, `docs/evidence/studio-dev/revisions/${name}-lifecycle.json`));
 console.log(JSON.stringify({status: identity.status, address: identity.address, nativeBalanceGEN: '0', lifecycleWrites: 0, archived: true}));
+}
+main().catch(()=>{console.error('Broken-revision archive stopped; inspect the identity and native balance. Raw SDK/RPC errors are suppressed.');process.exitCode=1;});

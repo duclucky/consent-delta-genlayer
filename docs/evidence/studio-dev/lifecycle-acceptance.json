@@ -1,0 +1,408 @@
+{
+  "command": "node scripts/verify-lifecycle.mjs",
+  "network": "studio-dev",
+  "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "sourceCommit": "aa9ea72bae865b6edcfe54030f08861fc5b0d1e7",
+  "verifiedAt": "2026-10-03T05:53:33.936Z",
+  "status": "PASS",
+  "parentTransactions": 17,
+  "nativeChildren": 3,
+  "writeMethods": [
+    "consent",
+    "create_charter",
+    "expire",
+    "expire_charter",
+    "propose_amendment",
+    "ratify",
+    "reject",
+    "review",
+    "withdraw"
+  ],
+  "charter": {
+    "id": "CD-live-035",
+    "phase": "ACTIVE",
+    "version": 2,
+    "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e"
+  },
+  "expiredDraft": {
+    "id": "CD-expire-035",
+    "phase": "EXPIRED"
+  },
+  "accounting": {
+    "funded_gen": 6,
+    "locked_gen": 0,
+    "credits_gen": 0,
+    "withdrawn_gen": 6,
+    "conserved": true
+  },
+  "contractBalanceGEN": "0",
+  "receipts": [
+    {
+      "label": "create",
+      "method": "create_charter",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:32:13.644Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44"
+    },
+    {
+      "label": "ratify-A",
+      "method": "ratify",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:32:59.209Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a"
+    },
+    {
+      "label": "ratify-B",
+      "method": "ratify",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:33:42.131Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570"
+    },
+    {
+      "label": "ratify-C",
+      "method": "ratify",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:34:26.364Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948"
+    },
+    {
+      "label": "propose-adopt",
+      "method": "propose_amendment",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 2,
+      "receipt": {
+        "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:35:14.917Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1"
+    },
+    {
+      "label": "review-adopt",
+      "method": "review",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:36:12.851Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988"
+    },
+    {
+      "label": "consent-B",
+      "method": "consent",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:37:02.608Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643"
+    },
+    {
+      "label": "withdraw-adopt",
+      "method": "withdraw",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:37:49.158Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa"
+    },
+    {
+      "label": "propose-refuse",
+      "method": "propose_amendment",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 2,
+      "receipt": {
+        "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:43:52.233Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae"
+    },
+    {
+      "label": "review-refuse",
+      "method": "review",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:44:54.442Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc"
+    },
+    {
+      "label": "reject-B",
+      "method": "reject",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:45:39.718Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b"
+    },
+    {
+      "label": "withdraw-refuse",
+      "method": "withdraw",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:46:26.569Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786"
+    },
+    {
+      "label": "propose-expire",
+      "method": "propose_amendment",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 2,
+      "receipt": {
+        "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:47:13.622Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373"
+    },
+    {
+      "label": "expire-proposal",
+      "method": "expire",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:49:18.106Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a"
+    },
+    {
+      "label": "withdraw-expire",
+      "method": "withdraw",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:50:05.052Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4"
+    },
+    {
+      "label": "create-draft",
+      "method": "create_charter",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:50:53.819Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2"
+    },
+    {
+      "label": "expire-charter",
+      "method": "expire_charter",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "applicationPurseGEN": 0,
+      "receipt": {
+        "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "observedFinalizedAt": "2026-10-03T05:52:25.538Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d"
+    }
+  ],
+  "withdrawals": [
+    {
+      "hash": "0xd5826f71c09ba7fd8d5eb9eb7898cb28e44246312b0772a47f153cbd22a8119f",
+      "parentHash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+      "status": "FINALIZED",
+      "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "valueGEN": "2",
+      "createdAt": "2026-10-03T05:37:47.115559+00:00",
+      "triggeredOn": "finalized",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd5826f71c09ba7fd8d5eb9eb7898cb28e44246312b0772a47f153cbd22a8119f",
+      "contractDecreaseGEN": "2",
+      "recipientBeforeGEN": "62.294061271582946533",
+      "recipientAfterGEN": "64.29393496633294571"
+    },
+    {
+      "hash": "0x773e8e568260931979f29baac506a36f21e8d65bcd24dcb15834833fd02590c2",
+      "parentHash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+      "status": "FINALIZED",
+      "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "valueGEN": "2",
+      "createdAt": "2026-10-03T05:46:23.146934+00:00",
+      "triggeredOn": "finalized",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x773e8e568260931979f29baac506a36f21e8d65bcd24dcb15834833fd02590c2",
+      "contractDecreaseGEN": "2",
+      "recipientBeforeGEN": "62.293856329832944887",
+      "recipientAfterGEN": "64.293730024582944064"
+    },
+    {
+      "hash": "0x5e0e490154a257e5c5c3884e3a0e78bce762888c44aeb8c74a724fd4415ba4f6",
+      "parentHash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+      "status": "FINALIZED",
+      "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "valueGEN": "2",
+      "createdAt": "2026-10-03T05:50:03.590749+00:00",
+      "triggeredOn": "finalized",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x5e0e490154a257e5c5c3884e3a0e78bce762888c44aeb8c74a724fd4415ba4f6",
+      "contractDecreaseGEN": "2",
+      "recipientBeforeGEN": "62.293651387582943241",
+      "recipientAfterGEN": "64.293525082332942418"
+    }
+  ],
+  "reviews": [
+    {
+      "proposal": "AM-adopt",
+      "attemptIndex": 1,
+      "coverage": [
+        {
+          "member_id": "A",
+          "impact": "PRESERVED"
+        },
+        {
+          "member_id": "B",
+          "impact": "MATERIAL_CHANGE"
+        },
+        {
+          "member_id": "C",
+          "impact": "PRESERVED"
+        }
+      ],
+      "result": "VALID",
+      "required": [
+        "B"
+      ],
+      "initialValidatorCount": 5,
+      "leaderOnly": false
+    },
+    {
+      "proposal": "AM-refuse",
+      "attemptIndex": 1,
+      "coverage": [
+        {
+          "member_id": "A",
+          "impact": "PRESERVED"
+        },
+        {
+          "member_id": "B",
+          "impact": "MATERIAL_CHANGE"
+        },
+        {
+          "member_id": "C",
+          "impact": "PRESERVED"
+        }
+      ],
+      "result": "VALID",
+      "required": [
+        "B"
+      ],
+      "initialValidatorCount": 5,
+      "leaderOnly": false
+    }
+  ],
+  "browserWalletEvidence": "PENDING_REAL_EVIDENCE"
+}

@@ -8,7 +8,7 @@ type Runtime = { api: ContractAdapter; refresh: number; busy: boolean; run: (met
 const RuntimeContext = createContext<Runtime | null>(null);
 const useRuntime = () => useContext(RuntimeContext)!;
 const short = (s: string) => `${s.slice(0,6)}…${s.slice(-4)}`;
-const date = (n: number) => new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(n*1000));
+const date = (n: number) => new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(n*1000));
 function useResource<T>(load: () => Promise<T>, keys: unknown[]) {
   const loader = useRef(load); loader.current = load;
   const [result, setResult] = useState<{ data?: T; error?: string; loading: boolean }>({ loading: true });

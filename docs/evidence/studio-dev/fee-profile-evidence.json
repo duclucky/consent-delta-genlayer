@@ -1,0 +1,131 @@
+{
+  "command": "node scripts/fee-profile.mjs",
+  "requiredMethods": [
+    "create_charter",
+    "ratify",
+    "propose_amendment",
+    "review",
+    "consent",
+    "reject",
+    "expire",
+    "expire_charter",
+    "withdraw"
+  ],
+  "measuredMethods": [
+    "create_charter",
+    "ratify",
+    "propose_amendment",
+    "review",
+    "consent",
+    "withdraw",
+    "reject",
+    "expire",
+    "expire_charter"
+  ],
+  "missingMethods": [],
+  "signed": false,
+  "evidence": [
+    {
+      "method": "create_charter",
+      "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+      "executionBudgetGEN": "0.00007864125",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "ratify",
+      "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+      "executionBudgetGEN": "0.00007862825",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "ratify",
+      "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+      "executionBudgetGEN": "0.00007862825",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "ratify",
+      "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+      "executionBudgetGEN": "0.00007862875",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "propose_amendment",
+      "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+      "executionBudgetGEN": "0.0000786355",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "review",
+      "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+      "executionBudgetGEN": "0.0000797325",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "consent",
+      "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+      "executionBudgetGEN": "0.000078636",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "withdraw",
+      "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+      "executionBudgetGEN": "0.00012630525",
+      "messageBudgetGEN": "0.000125"
+    },
+    {
+      "method": "propose_amendment",
+      "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+      "executionBudgetGEN": "0.0000786365",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "review",
+      "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+      "executionBudgetGEN": "0.0000797365",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "reject",
+      "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+      "executionBudgetGEN": "0.00007863025",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "withdraw",
+      "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+      "executionBudgetGEN": "0.00012630525",
+      "messageBudgetGEN": "0.000125"
+    },
+    {
+      "method": "propose_amendment",
+      "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+      "executionBudgetGEN": "0.000078637",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "expire",
+      "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+      "executionBudgetGEN": "0.0000786305",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "withdraw",
+      "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+      "executionBudgetGEN": "0.00012630525",
+      "messageBudgetGEN": "0.000125"
+    },
+    {
+      "method": "create_charter",
+      "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+      "executionBudgetGEN": "0.00007864125",
+      "messageBudgetGEN": "0"
+    },
+    {
+      "method": "expire_charter",
+      "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+      "executionBudgetGEN": "0.0000786285",
+      "messageBudgetGEN": "0"
+    }
+  ]
+}

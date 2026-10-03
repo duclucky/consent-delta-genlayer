@@ -1,0 +1,3066 @@
+{
+  "network": "studio-dev",
+  "chainId": 61997,
+  "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "sourceCommit": "aa9ea72bae865b6edcfe54030f08861fc5b0d1e7",
+  "startedAt": "2026-10-03T05:23:26.138Z",
+  "steps": [
+    {
+      "label": "create",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "create_charter",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094638300002588",
+      "before": {
+        "absent": true,
+        "actorBalanceGEN": "64.294297176582949002",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:31:32.537Z",
+          "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:31:35.934Z",
+          "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+          "status": "PROPOSING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:31:39.655Z",
+          "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:32:13.643Z",
+          "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0xd5b0ecc7aefb8ea4d23b949f19d2e0634b6a5ba9915f016db35cf45fca382d44",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:32:13.644Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "157269250000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": false
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.294218535332948179",
+        "contractBalanceGEN": "0"
+      }
+    },
+    {
+      "label": "ratify-A",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "ratify",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094622700002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": false
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.294218535332948179",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:32:21.505Z",
+          "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:32:25.258Z",
+          "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:32:59.207Z",
+          "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x947b92168753cfd7debf5dc7c9c953779dfd67841a77ffcd9673c28e1f13d42a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:32:59.209Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "157256250000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.294139907082947356",
+        "contractBalanceGEN": "0"
+      }
+    },
+    {
+      "label": "ratify-B",
+      "role": "B",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "ratify",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094622700002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "18.661274472916662931",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:33:06.210Z",
+          "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:33:09.858Z",
+          "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+          "status": "COMMITTING",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:33:13.422Z",
+          "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:33:42.130Z",
+          "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x23a72e3bdbd07950422839cca22d4f27a96b38a2d1bf852fbde2302bce955570",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:33:42.131Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "157256250000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "18.661195844666662108",
+        "contractBalanceGEN": "0"
+      }
+    },
+    {
+      "label": "ratify-C",
+      "role": "C",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "method": "ratify",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094623300002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "1.998130056450028485",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:33:50.118Z",
+          "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:33:53.620Z",
+          "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:34:26.363Z",
+          "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x91a2d6182840fe979ecaeb61b9f395577efbabf1a3e6537502ef26199148e948",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:34:26.364Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "157256750000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "1.998051427700027662",
+        "contractBalanceGEN": "0"
+      }
+    },
+    {
+      "label": "propose-adopt",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "propose_amendment",
+      "applicationPurseGEN": 2,
+      "protocolDepositGEN": "0.000094631400002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "proposalAbsent": true,
+        "actorBalanceGEN": "64.294139907082947356",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:34:36.482Z",
+          "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:34:39.902Z",
+          "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+          "status": "PROPOSING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:34:43.355Z",
+          "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:35:14.915Z",
+          "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x34ff29488c0f1adbe7f2b8da996d2c637b4670a324c356cdcd6bb360ba5440e1",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:35:14.917Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "157263500000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-adopt",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-adopt",
+          "charter_id": "CD-live-035",
+          "phase": "REVIEWABLE",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 1,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset without paying a fee.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791027269,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "62.294061271582946533",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "review-adopt",
+      "role": "C",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "method": "review",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000095947800002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-adopt",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-adopt",
+          "charter_id": "CD-live-035",
+          "phase": "REVIEWABLE",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 1,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset without paying a fee.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791027269,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "1.998051427700027662",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:35:32.602Z",
+          "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:35:36.031Z",
+          "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+          "status": "COMMITTING",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:35:43.537Z",
+          "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:36:12.850Z",
+          "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x05a81f1f4d131aebb22041cdfb69f23d97c28e360036d255c77bcfd7d477a988",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:36:12.851Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "159460500000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-adopt",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-adopt",
+          "charter_id": "CD-live-035",
+          "phase": "CONSENT_REQUIRED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 1,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset without paying a fee.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791027269,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "1.997971695200026839",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "consent-B",
+      "role": "B",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "consent",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094632000002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-adopt",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-adopt",
+          "charter_id": "CD-live-035",
+          "phase": "CONSENT_REQUIRED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 1,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset without paying a fee.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791027269,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "18.661195844666662108",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:36:23.583Z",
+          "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:36:27.269Z",
+          "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+          "status": "PROPOSING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:36:30.756Z",
+          "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:37:02.607Z",
+          "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0xb9cf28a7a57f5f753709037be760583864953efcf62dfbc58c0bc6f39ba35643",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:37:02.608Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "157264000000000",
+        "totalMessageFees": "0",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-adopt",
+          "charter_id": "CD-live-035",
+          "phase": "ADOPTED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 1,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset without paying a fee.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791027269,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A",
+            "B"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 0
+        },
+        "actorBalanceGEN": "18.661117208666661285",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "withdraw-adopt",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "withdraw",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000302449500002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "62.294061271582946533",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:37:12.872Z",
+          "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:37:16.303Z",
+          "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+          "status": "COMMITTING",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:37:20.501Z",
+          "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:37:49.157Z",
+          "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:37:49.158Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "executionBudgetPerRound": "252609250000000",
+        "totalMessageFees": "125000000000000",
+        "rotationsPerRound": "0"
+      },
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.29393496633294571",
+        "contractBalanceGEN": "0"
+      },
+      "nativeTransferProof": {
+        "childReceipt": {
+          "hash": "0xd5826f71c09ba7fd8d5eb9eb7898cb28e44246312b0772a47f153cbd22a8119f",
+          "parentHash": "0xa02ca37da5f2c258fa61f17310b3f23761e493daa0d25e1b794b8d26333746aa",
+          "status": "FINALIZED",
+          "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+          "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+          "valueGEN": "2",
+          "createdAt": "2026-10-03T05:37:47.115559+00:00",
+          "triggeredOn": "finalized",
+          "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd5826f71c09ba7fd8d5eb9eb7898cb28e44246312b0772a47f153cbd22a8119f"
+        },
+        "contractDecreaseGEN": "2",
+        "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+        "recipientBalanceBeforeGEN": "62.294061271582946533",
+        "recipientBalanceAfterGEN": "64.29393496633294571",
+        "after": {
+          "charter": {
+            "id": "CD-live-035",
+            "title": "Shared research charter",
+            "phase": "ACTIVE",
+            "version": 2,
+            "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+            "deadline": 1791026606,
+            "members": [
+              {
+                "id": "A",
+                "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+                "terms": "A may read the shared research dataset.",
+                "ratified": true
+              },
+              {
+                "id": "B",
+                "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+                "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+                "ratified": true
+              },
+              {
+                "id": "C",
+                "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+                "terms": "C must publish attribution when using the shared research dataset.",
+                "ratified": true
+              }
+            ],
+            "active_proposal": "",
+            "proposal_ids": [
+              "AM-adopt"
+            ]
+          },
+          "accounting": {
+            "funded_gen": 2,
+            "locked_gen": 0,
+            "credits_gen": 0,
+            "withdrawn_gen": 2,
+            "conserved": true
+          },
+          "actorBalanceGEN": "64.29393496633294571",
+          "contractBalanceGEN": "0"
+        }
+      }
+    },
+    {
+      "label": "propose-refuse",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "propose_amendment",
+      "applicationPurseGEN": 2,
+      "protocolDepositGEN": "0.000094632600002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "proposalAbsent": true,
+        "actorBalanceGEN": "64.29393496633294571",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:43:18.125Z",
+          "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:43:21.535Z",
+          "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:43:52.232Z",
+          "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0xccf346025b607150b90a4c44672adad23dee78ae4acb9c586e0a6a46cc658aae",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:43:52.233Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "78636500000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-refuse",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-refuse",
+          "charter_id": "CD-live-035",
+          "phase": "REVIEWABLE",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791027791,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "62.293856329832944887",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "review-refuse",
+      "role": "C",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "method": "review",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000095952600002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-refuse",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-refuse",
+          "charter_id": "CD-live-035",
+          "phase": "REVIEWABLE",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791027791,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "1.997971695200026839",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:44:13.056Z",
+          "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:44:16.685Z",
+          "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+          "status": "PROPOSING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:44:20.062Z",
+          "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+          "status": "COMMITTING",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:44:27.359Z",
+          "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:44:54.440Z",
+          "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x84ae269781708811ceca27293c81409178a4e6d98ad24109f30f66c8e88023fc",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:44:54.442Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "79736500000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-refuse",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-refuse",
+          "charter_id": "CD-live-035",
+          "phase": "CONSENT_REQUIRED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791027791,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "1.997891958700026016",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "reject-B",
+      "role": "B",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "reject",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094625100002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-refuse",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-refuse",
+          "charter_id": "CD-live-035",
+          "phase": "CONSENT_REQUIRED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791027791,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "18.661117208666661285",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:45:05.543Z",
+          "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:45:08.902Z",
+          "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+          "status": "COMMITTING",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:45:12.310Z",
+          "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:45:39.716Z",
+          "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x9f1c7b1698310b30712cbec9edd9204b74d9d8c815ab04b93378434cf70b595b",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:45:39.718Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "78630250000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-refuse",
+          "charter_id": "CD-live-035",
+          "phase": "REJECTED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791027791,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 0
+        },
+        "actorBalanceGEN": "18.661038578416660462",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "withdraw-refuse",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "withdraw",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000302449500002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "actorBalanceGEN": "62.293856329832944887",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:45:49.862Z",
+          "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:45:53.558Z",
+          "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:46:26.566Z",
+          "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:46:26.569Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "126305250000000",
+        "totalMessageFees": "125000000000000"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 4,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.293730024582944064",
+        "contractBalanceGEN": "0"
+      },
+      "nativeTransferProof": {
+        "childReceipt": {
+          "hash": "0x773e8e568260931979f29baac506a36f21e8d65bcd24dcb15834833fd02590c2",
+          "parentHash": "0x0c2cee3f49d9b15ffa924f526107710efb6cb585702a7676e0415fbfdd2c9786",
+          "status": "FINALIZED",
+          "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+          "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+          "valueGEN": "2",
+          "createdAt": "2026-10-03T05:46:23.146934+00:00",
+          "triggeredOn": "finalized",
+          "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x773e8e568260931979f29baac506a36f21e8d65bcd24dcb15834833fd02590c2"
+        },
+        "contractDecreaseGEN": "2",
+        "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+        "recipientBalanceBeforeGEN": "62.293856329832944887",
+        "recipientBalanceAfterGEN": "64.293730024582944064",
+        "after": {
+          "charter": {
+            "id": "CD-live-035",
+            "title": "Shared research charter",
+            "phase": "ACTIVE",
+            "version": 2,
+            "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+            "deadline": 1791026606,
+            "members": [
+              {
+                "id": "A",
+                "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+                "terms": "A may read the shared research dataset.",
+                "ratified": true
+              },
+              {
+                "id": "B",
+                "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+                "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+                "ratified": true
+              },
+              {
+                "id": "C",
+                "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+                "terms": "C must publish attribution when using the shared research dataset.",
+                "ratified": true
+              }
+            ],
+            "active_proposal": "",
+            "proposal_ids": [
+              "AM-adopt",
+              "AM-refuse"
+            ]
+          },
+          "accounting": {
+            "funded_gen": 4,
+            "locked_gen": 0,
+            "credits_gen": 0,
+            "withdrawn_gen": 4,
+            "conserved": true
+          },
+          "actorBalanceGEN": "64.293730024582944064",
+          "contractBalanceGEN": "0"
+        }
+      }
+    },
+    {
+      "label": "propose-expire",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "propose_amendment",
+      "applicationPurseGEN": 2,
+      "protocolDepositGEN": "0.000094633200002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 4,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 4,
+          "conserved": true
+        },
+        "proposalAbsent": true,
+        "actorBalanceGEN": "64.293730024582944064",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:46:38.727Z",
+          "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:46:42.185Z",
+          "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:47:13.619Z",
+          "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0xf15c36377129c8b00ff26922f18a37037cba978a5b6c0073f7068d078a8a3373",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:47:13.622Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "78637000000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-expire",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse",
+            "AM-expire"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 6,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 4,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-expire",
+          "charter_id": "CD-live-035",
+          "phase": "REVIEWABLE",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791006512,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "62.293651387582943241",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "expire-proposal",
+      "role": "C",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "method": "expire",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094625400002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-expire",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse",
+            "AM-expire"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 6,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 4,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-expire",
+          "charter_id": "CD-live-035",
+          "phase": "REVIEWABLE",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791006512,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "actorBalanceGEN": "1.997891958700026016",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:48:43.087Z",
+          "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:48:46.477Z",
+          "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:49:18.104Z",
+          "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x4816ea55c08dc18c1d543a7c6f518d9535a378f4a03a4244a396d1cf4cd15a6a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:49:18.106Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "78630500000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse",
+            "AM-expire"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 6,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 4,
+          "conserved": true
+        },
+        "proposal": {
+          "id": "AM-expire",
+          "charter_id": "CD-live-035",
+          "phase": "EXPIRED",
+          "proposer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "base_version": 2,
+          "old_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "new_terms": [
+            "A may read the shared research dataset.",
+            "B may redistribute the shared research dataset only after paying a fee to the group. B must also publish a usage report every week.",
+            "C must publish attribution when using the shared research dataset."
+          ],
+          "digest": "523b193e6ccaf80a8c4b9f245dd56985dac603f6e3bc13db7a16387d55a32ae5",
+          "deadline": 1791006512,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 0
+        },
+        "actorBalanceGEN": "1.997813328200025193",
+        "contractBalanceGEN": "2"
+      }
+    },
+    {
+      "label": "withdraw-expire",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "withdraw",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000302449500002588",
+      "before": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse",
+            "AM-expire"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 6,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 4,
+          "conserved": true
+        },
+        "actorBalanceGEN": "62.293651387582943241",
+        "contractBalanceGEN": "2"
+      },
+      "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:49:30.861Z",
+          "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:49:34.263Z",
+          "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:50:05.050Z",
+          "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:50:05.052Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "126305250000000",
+        "totalMessageFees": "125000000000000"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-live-035",
+          "title": "Shared research charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+          "deadline": 1791026606,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-adopt",
+            "AM-refuse",
+            "AM-expire"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 6,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 6,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.293525082332942418",
+        "contractBalanceGEN": "0"
+      },
+      "nativeTransferProof": {
+        "childReceipt": {
+          "hash": "0x5e0e490154a257e5c5c3884e3a0e78bce762888c44aeb8c74a724fd4415ba4f6",
+          "parentHash": "0x215c4d702cf2c71dc880e60f7a9d0a0a1e4d3e1d3fd0d046a1ecd7e8f18989e4",
+          "status": "FINALIZED",
+          "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+          "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+          "valueGEN": "2",
+          "createdAt": "2026-10-03T05:50:03.590749+00:00",
+          "triggeredOn": "finalized",
+          "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x5e0e490154a257e5c5c3884e3a0e78bce762888c44aeb8c74a724fd4415ba4f6"
+        },
+        "contractDecreaseGEN": "2",
+        "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+        "recipientBalanceBeforeGEN": "62.293651387582943241",
+        "recipientBalanceAfterGEN": "64.293525082332942418",
+        "after": {
+          "charter": {
+            "id": "CD-live-035",
+            "title": "Shared research charter",
+            "phase": "ACTIVE",
+            "version": 2,
+            "digest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+            "deadline": 1791026606,
+            "members": [
+              {
+                "id": "A",
+                "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+                "terms": "A may read the shared research dataset.",
+                "ratified": true
+              },
+              {
+                "id": "B",
+                "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+                "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+                "ratified": true
+              },
+              {
+                "id": "C",
+                "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+                "terms": "C must publish attribution when using the shared research dataset.",
+                "ratified": true
+              }
+            ],
+            "active_proposal": "",
+            "proposal_ids": [
+              "AM-adopt",
+              "AM-refuse",
+              "AM-expire"
+            ]
+          },
+          "accounting": {
+            "funded_gen": 6,
+            "locked_gen": 0,
+            "credits_gen": 0,
+            "withdrawn_gen": 6,
+            "conserved": true
+          },
+          "actorBalanceGEN": "64.293525082332942418",
+          "contractBalanceGEN": "0"
+        }
+      }
+    },
+    {
+      "label": "create-draft",
+      "role": "A",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "create_charter",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094638300002588",
+      "before": {
+        "absent": true,
+        "actorBalanceGEN": "64.293525082332942418",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:50:16.052Z",
+          "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:50:19.466Z",
+          "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+          "status": "COMMITTING",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:50:23.513Z",
+          "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:50:53.817Z",
+          "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x514baa8d4e80e4ab347026f0fe4b49c279b2b024c0903568e9f85ddbd2623ea2",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:50:53.819Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "78641250000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-expire-035",
+          "title": "Unratified research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "55ab185e94e2e2892a64c706b79e3ae47b1dde1febc62e1abf2853ea000abf25",
+          "deadline": 1791006701,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": false
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "64.293446441082941595",
+        "contractBalanceGEN": "0"
+      }
+    },
+    {
+      "label": "expire-charter",
+      "role": "C",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "method": "expire_charter",
+      "applicationPurseGEN": 0,
+      "protocolDepositGEN": "0.000094623000002588",
+      "before": {
+        "charter": {
+          "id": "CD-expire-035",
+          "title": "Unratified research charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "55ab185e94e2e2892a64c706b79e3ae47b1dde1febc62e1abf2853ea000abf25",
+          "deadline": 1791006701,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": false
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "1.997813328200025193",
+        "contractBalanceGEN": "0"
+      },
+      "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+      "status": "SUBMITTED_OR_SIGNED",
+      "statuses": [
+        {
+          "at": "2026-10-03T05:51:50.776Z",
+          "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+          "status": "PENDING",
+          "execution": "NOT_VOTED",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:51:54.185Z",
+          "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+          "status": "ACCEPTED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": false,
+          "successful": false,
+          "failed": false
+        },
+        {
+          "at": "2026-10-03T05:52:25.535Z",
+          "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+          "status": "FINALIZED",
+          "execution": "FINISHED_WITH_RETURN",
+          "finalized": true,
+          "successful": true,
+          "failed": false
+        }
+      ],
+      "receipt": {
+        "hash": "0x13051673aa375e3b634455bb551afb75024c05426c5639e8b09201d2630f916d",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "finalizedAt": "2026-10-03T05:52:25.538Z",
+      "feeObservation": {
+        "leaderTimeunitsAllocation": "100",
+        "validatorTimeunitsAllocation": "200",
+        "rotationsPerRound": "0",
+        "executionBudgetPerRound": "78628500000000",
+        "totalMessageFees": "0"
+      },
+      "childHashes": [],
+      "completed": true,
+      "after": {
+        "charter": {
+          "id": "CD-expire-035",
+          "title": "Unratified research charter",
+          "phase": "EXPIRED",
+          "version": 1,
+          "digest": "55ab185e94e2e2892a64c706b79e3ae47b1dde1febc62e1abf2853ea000abf25",
+          "deadline": 1791006701,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+              "terms": "A may read the shared research dataset.",
+              "ratified": false
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C must publish attribution when using the shared research dataset.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "actorBalanceGEN": "1.99773469970002437",
+        "contractBalanceGEN": "0"
+      }
+    }
+  ],
+  "status": "ALL_METHODS_LIFECYCLE_AND_NATIVE_WITHDRAWALS_VERIFIED",
+  "activationDeadline": 1791026606,
+  "baselineDigest": "079e10ec65b0d56f530cfb122353ba1ad46a5f944b607f1265c1edfca874a3de",
+  "adoptDeadline": 1791027269,
+  "unaffectedActions": [],
+  "refusalBaseDigest": "ca6ffd58c73b4972ff985392ff09661e2eb6124e68fb3bc6c2a6b60bc8c90e4e",
+  "refusalDeadline": 1791027791,
+  "expiryDeadline": 1791006512,
+  "draftDeadline": 1791006701
+}

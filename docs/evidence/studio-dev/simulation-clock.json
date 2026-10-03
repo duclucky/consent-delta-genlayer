@@ -1,0 +1,6 @@
+{
+  "command": "node scripts/simulation-clock.mjs",
+  "signed": false,
+  "simulationDatetime": "2026-10-03T05:25:47.000Z",
+  "localDatetime": "2026-10-03T05:25:47.644Z"
+}

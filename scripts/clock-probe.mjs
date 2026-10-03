@@ -1,6 +1,7 @@
 // Isolated in-memory feasibility spike. No deployment, signing or persisted contract source.
 import { abi } from 'genlayer-js';
 import { rpc, authorizedActors, saveEvidence } from './network.mjs';
+async function main(){
 const [actor]=await authorizedActors();const results=[];
 for(const [name,expression]of [['datetime-float','stamp.timestamp()'],['integer-delta','(stamp - datetime.datetime(1970,1,1,tzinfo=datetime.timezone.utc)).days * 86400 + (stamp - datetime.datetime(1970,1,1,tzinfo=datetime.timezone.utc)).seconds'],['message-clock','(stamp - datetime.datetime(1970,1,1,tzinfo=datetime.timezone.utc)).days * 86400 + (stamp - datetime.datetime(1970,1,1,tzinfo=datetime.timezone.utc)).seconds']]) {
  const clock=name==='message-clock'?`datetime.datetime.fromisoformat(gl.message.raw["datetime"])`:'gl.vm.get_timestamp()';
@@ -9,3 +10,5 @@ for(const [name,expression]of [['datetime-float','stamp.timestamp()'],['integer-
  try{const receipt=await rpc('sim_call',[{type:'deploy',from:actor.account.address,to:`0x${'00'.repeat(20)}`,data}]);results.push({name,execution:receipt.execution_result});}catch{results.push({name,execution:'RPC_ERROR'});}
 }
 const output={command:'node scripts/clock-probe.mjs',signed:false,results};await saveEvidence('clock-probe.json',output);console.log(JSON.stringify(output));
+}
+main().catch(()=>{console.error('Read-only runner clock probe unavailable; raw SDK/RPC errors are suppressed.');process.exitCode=1;});
