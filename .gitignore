@@ -11,5 +11,6 @@ __pycache__/
 *.tsbuildinfo
 .vercel/
 .local/
+artifacts/
 design-system/
 docs/evidence/local/screenshots/

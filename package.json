@@ -7,6 +7,6 @@
   "scripts": {
     "dev": "npm --workspace frontend run dev",
     "build": "npm --workspace frontend run build",
-    "check": "npm --workspace frontend run check"
+    "check": "node scripts/check.mjs"
   }
 }

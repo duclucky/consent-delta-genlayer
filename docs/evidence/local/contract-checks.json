@@ -1,0 +1,14 @@
+{
+  "phase": 6,
+  "network_evidence": false,
+  "contract_count": 1,
+  "methods": { "writes": 9, "views": 8 },
+  "commands": [
+    { "command": "npm run check", "exit": 0, "output": "Lint passed (3 checks); Validation passed: ConsentDeltaContract; 103 direct tests passed; 4 receipt tests passed; 23 frontend tests passed; TypeScript passed; Vite production build passed" },
+    { "command": ".venv/Scripts/gltest.exe tests/direct -q --tb=short", "exit": 0, "output": "103 passed in 17.12s" }
+  ],
+  "critical_skips": 0,
+  "coverage": ["exact entity/actor/version/digest binding", "coverage/enum/root settlement invariants", "independent semantic validator replay", "malformed/unavailable/injected model output", "direct transaction-time boundaries with stale phase", "adoption/refusal/expiry GEN conservation", "fixed-owner credits", "debit-before-EVM-message and duplicate withdrawal", "ASCII/header/class/payable metadata", "raw and normalized receipt allowlists"],
+  "runtime": "Pinned v0.3 runner, manager v0.6.0-rc8 release, Python 3.12.14; no inherited prebuilt override",
+  "limits": "Direct tests and validator replay are local. Native transfer, independent Studio Dev consensus and browser-wallet evidence remain pending. gltest configuration identifies Studio Dev; this command runs direct fixtures without RPC transactions."
+}

@@ -1,0 +1,14 @@
+{
+  "phase": 5,
+  "contract": "ConsentDeltaContract",
+  "header": "v0.3.0 / py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "tooling": "Fresh official RC commit install, Python 3.12.14, GenVM manager v0.6.0-rc8",
+  "red_command": ".venv/Scripts/python.exe -m pytest tests/direct/test_settlement.py -q",
+  "red_output": "2 failed, 14 passed; complete material/ambiguous evidence rejected by unimplemented boundary",
+  "lifecycle_red": "test_affected_consent_controls_adoption_and_fixed_credit failed: create_charter missing after actual SDK deployment",
+  "lint_command": ".venv/Scripts/python.exe scripts/genvm_lint.py check contracts/consent_delta.py",
+  "lint_output": "Lint passed (3 checks); Validation passed; ConsentDeltaContract; Methods 17 (8 view, 9 write)",
+  "green_command": ".venv/Scripts/python.exe -m pytest tests/direct -q --tb=short",
+  "green_output": "44 passed in 5.35s",
+  "scope": "Local direct-mode proof only; independent validator replay and network lifecycle remain pending"
+}
