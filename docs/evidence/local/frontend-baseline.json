@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-03",
+  "scope": "Phase 3A/3B local frontend baseline; no network lifecycle claim",
+  "command": "npm run check",
+  "exitCode": 0,
+  "typeScript": "passed",
+  "testFiles": 1,
+  "testsPassed": 23,
+  "productionBuild": "vite v8.3.2; 1902 modules transformed; built in 381ms",
+  "browserUrl": "http://127.0.0.1:5177/",
+  "browserObserved": [
+    "value-first landing and persistent navigation",
+    "initial charter form -> exact review; submit disabled without configured contract",
+    "native wallet dialog focuses close control; Escape returns focus to connect button",
+    "zero compatible wallet rows in the connected In-app Browser"
+  ],
+  "responsive": [
+    { "width": 375, "height": 812, "horizontalOverflow": false },
+    { "width": 812, "height": 375, "horizontalOverflow": false },
+    { "width": 768, "height": 1024, "horizontalOverflow": false },
+    { "width": 1024, "height": 768, "horizontalOverflow": false },
+    { "width": 1440, "height": 900, "horizontalOverflow": false }
+  ],
+  "measuredContrast": { "ctaNormalText": 5.57, "introAndSmallText": 6.91, "navigationText": 7.58, "largeHeroAccent": 4.07 },
+  "provisionalAdapter": "explicitly unavailable; no static fixtures in production",
+  "remainingProof": ["real SDK adapter", "browser CORS/RPC", "actual wallet writes", "finalized canonical lifecycle", "network transfers"]
+}
