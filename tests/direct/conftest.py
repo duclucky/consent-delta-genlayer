@@ -2,11 +2,12 @@
 
 Use the linter's complete official release download instead of a partial shared
 gltest cache. On Windows, defer unlinking fd0's message until stdin is restored.
-The v0.3 GetTimestamp host call is implemented from the VM's transaction clock.
+The transaction clock is supplied by the actual VM message, without a clock shim.
+The RC tool's warp refresh omits raw datetime; keep that message field in sync.
 """
 import os
 import json
-from datetime import datetime
+import sys
 from pathlib import Path
 from unittest.mock import patch
 
@@ -27,6 +28,14 @@ sdk_loader.download_artifacts = download_artifacts
 original_inject = loader._inject_message_to_fd0
 original_cleanup = VMContext._cleanup_after_deactivate
 original_call = wasi_mock._handle_gl_call
+original_refresh = VMContext._refresh_gl_message
+
+
+def refresh_message(vm):
+    original_refresh(vm)
+    message = sys.modules.get("genlayer.message")
+    if message is not None and isinstance(message.raw, dict):
+        message.raw["datetime"] = vm._datetime
 
 
 def inject_message(vm):
@@ -47,8 +56,6 @@ def cleanup(vm):
 
 
 def host_call(vm, request):
-    if isinstance(request, dict) and "GetTimestamp" in request:
-        return int(datetime.fromisoformat(vm._datetime.replace("Z", "+00:00")).timestamp())
     if isinstance(request, dict) and "ExecPrompt" in request:
         # The pinned v0.3 decoder requires JSON text. The RC mock incorrectly
         # pre-parses JSON into a dict, which is not the actual host wire format.
@@ -60,4 +67,5 @@ def host_call(vm, request):
 
 loader._inject_message_to_fd0 = inject_message
 VMContext._cleanup_after_deactivate = cleanup
+VMContext._refresh_gl_message = refresh_message
 wasi_mock._handle_gl_call = host_call

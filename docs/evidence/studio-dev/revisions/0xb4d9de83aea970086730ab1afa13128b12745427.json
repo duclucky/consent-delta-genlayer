@@ -7,7 +7,7 @@
   "depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
   "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
   "sourceDigest": "0x983a3daa42eb25851b8ea1bdba1294b18c19554561ec6dbfe363f2f5a6d10af7",
-  "status": "ACTIVE",
+  "status": "ABANDONED_BROKEN",
   "protocolDepositGEN": "0.000094870500002588",
   "transactionHash": "0x1f386b8cab9b4728f53fb563afefee5609ac24d7d7798795a9e4af67233c97fd",
   "address": "0xB4d9De83aEa970086730Ab1AFA13128B12745427",
@@ -42,5 +42,14 @@
     "reject",
     "review",
     "withdraw"
-  ]
+  ],
+  "reason": "Pinned runner GetTimestamp host call fails before charter creation. Replacement uses canonical message datetime; no further value or writes to this revision.",
+  "archivedAt": "2026-10-03T05:20:53.070Z",
+  "recovery": {
+    "nativeBalanceGEN": "0",
+    "lifecycleWrites": 0,
+    "orphanedGEN": "0",
+    "diagnosis": "create-diagnosis.json",
+    "replacementProbe": "clock-probe.json"
+  }
 }

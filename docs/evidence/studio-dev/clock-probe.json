@@ -1,0 +1,18 @@
+{
+  "command": "node scripts/clock-probe.mjs",
+  "signed": false,
+  "results": [
+    {
+      "name": "datetime-float",
+      "execution": "RPC_ERROR"
+    },
+    {
+      "name": "integer-delta",
+      "execution": "RPC_ERROR"
+    },
+    {
+      "name": "message-clock",
+      "execution": "SUCCESS"
+    }
+  ]
+}

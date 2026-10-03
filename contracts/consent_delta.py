@@ -1,5 +1,6 @@
 # v0.3.0
 # { "Depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng" }
+import datetime
 import json
 from dataclasses import dataclass
 
@@ -24,7 +25,10 @@ def address_text(address: Address) -> str:
 
 
 def now() -> int:
-    return int(gl.vm.get_timestamp().timestamp())
+    # Canonical transaction time; integer arithmetic is supported by this runner.
+    stamp = datetime.datetime.fromisoformat(gl.message.raw["datetime"])
+    delta = stamp - datetime.datetime(1970, 1, 1, tzinfo=datetime.timezone.utc)
+    return delta.days * 86400 + delta.seconds
 
 
 def valid_id(value: str) -> bool:

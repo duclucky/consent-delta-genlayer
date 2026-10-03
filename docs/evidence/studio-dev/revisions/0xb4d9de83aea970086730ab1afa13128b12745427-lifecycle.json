@@ -1,0 +1,10 @@
+{
+  "network": "studio-dev",
+  "chainId": 61997,
+  "address": "0xB4d9De83aEa970086730Ab1AFA13128B12745427",
+  "sourceCommit": "ba3316c39a5f8ce84aa9364e8134317e5dc54026",
+  "startedAt": "2026-10-03T05:07:31.005Z",
+  "steps": [],
+  "status": "IN_PROGRESS",
+  "activationDeadline": 1791025651
+}

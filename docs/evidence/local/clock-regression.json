@@ -1,0 +1,18 @@
+{
+  "command": "npm run check",
+  "contract": "ConsentDeltaContract",
+  "methods": 17,
+  "directPassed": 103,
+  "receiptProxyPassed": 11,
+  "frontendPassed": 37,
+  "typescript": "PASS",
+  "productionBuild": "PASS",
+  "timestampHostShim": false,
+  "rawMessageWarpSynchronization": true,
+  "redRegression": "1 failed: GetTimestamp returned None after removing host shim",
+  "temporalRed": "15 failed before fixing RC raw datetime synchronization",
+  "studioMessageClockProbe": "SUCCESS",
+  "nativeOldRevisionBalanceGEN": "0",
+  "oldRevisionStatus": "ABANDONED_BROKEN",
+  "limitation": "Local tests and read-only simulation do not prove finalized lifecycle or browser wallet signing"
+}

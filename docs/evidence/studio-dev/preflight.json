@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-03T04:30:51.355Z",
+  "at": "2026-10-03T05:20:16.883Z",
   "command": "node scripts/inspect.mjs",
   "readOnly": true,
   "network": {
@@ -8,12 +8,12 @@
     "walletRpc": "https://studio-dev.genlayer.com/api",
     "consensus": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575"
   },
-  "sourceCommit": "e20c47aa63eaa246ae58561d9fda0dbe548458c6",
+  "sourceCommit": "4c5d343dd8949b1b85e97fac4d12684a2e192ac0",
   "actors": [
     {
       "role": "A",
       "address": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
-      "balanceGEN": "64.294454848082950648"
+      "balanceGEN": "64.294376013332949825"
     },
     {
       "role": "B",

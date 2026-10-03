@@ -1,0 +1,69 @@
+{
+  "command": "node scripts/diagnose-create.mjs",
+  "signed": false,
+  "rpcErrorCode": -32000,
+  "errorFields": [
+    "code",
+    "message",
+    "data"
+  ],
+  "detailFields": [
+    "receipt",
+    "params"
+  ],
+  "receiptFields": [
+    "vote",
+    "execution_result",
+    "result",
+    "calldata",
+    "gas_used",
+    "mode",
+    "contract_state",
+    "contract_state_hash",
+    "node_config",
+    "eq_outputs",
+    "pending_transactions",
+    "genvm_result",
+    "processing_time",
+    "nondet_disagree",
+    "execution_stats"
+  ],
+  "resultFields": [],
+  "execution": "ERROR",
+  "mode": "leader",
+  "reasons": [],
+  "errorClasses": [],
+  "identifiers": [
+    "get_timestamp",
+    "timestamp"
+  ],
+  "genvmFields": [
+    "stdout",
+    "stderr",
+    "error_code",
+    "raw_error",
+    "error_description",
+    "data_fee_bucket_totals",
+    "data_fees_remaining",
+    "data_fees_consumed"
+  ],
+  "logFieldTypes": {
+    "stdout": {
+      "type": "string",
+      "length": 0
+    },
+    "stderr": {
+      "type": "string",
+      "length": 1018
+    }
+  },
+  "safePatterns": [],
+  "exceptionNames": [
+    "nSystemError"
+  ],
+  "clockFailureKind": [
+    "error"
+  ],
+  "safeTerminalReason": "SystemError: 2: inval",
+  "safeErrorReason": "AmV4aXRfY29kZSAx"
+}
