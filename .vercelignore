@@ -16,6 +16,8 @@ docs/
 README.md
 requirements.txt
 gltest.config.yaml
+precheck-report.*
+grade-report.json
 scripts/*
 !scripts/rpc-proxy.mjs
 !scripts/receipt.mjs

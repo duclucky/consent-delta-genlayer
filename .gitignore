@@ -14,6 +14,5 @@ __pycache__/
 artifacts/
 design-system/
 docs/evidence/local/screenshots/
-
-.vercel
-.env*
+/precheck-report.*
+/grade-report.json

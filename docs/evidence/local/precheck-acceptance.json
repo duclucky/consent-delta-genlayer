@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-03",
+  "command": "genlayer-precheck.ps1 -Project consent-delta -Category projects -RepoUrl https://github.com/duclucky/consent-delta-genlayer -ExplorerUrl https://explorer-studio-dev.genlayer.com/address/0x18F1689CE9241894433F44b41989C46E45a13DC5 -NotesFile .local/submission-notes.txt",
+  "skipDynamic": false,
+  "exitCode": 0,
+  "static": { "BLOCKER": 0, "WARN": 0, "AUTO": 6 },
+  "dynamic": { "npmRunCheck": "PASS", "gltest": "PASS" },
+  "gitRoot": "intended project child",
+  "internalOrSecretTrackedFiles": 0,
+  "category": "projects",
+  "descriptionFileCharacters": 995,
+  "descriptionCopyCharacters": 994,
+  "automatedGate": "PASS",
+  "manualBrowserWalletProof": "PENDING_REAL_EVIDENCE",
+  "limitations": "The checker is offline and cannot verify extension-wallet signing, semantic truth or external adoption. Its estimate is not an official steward score."
+}

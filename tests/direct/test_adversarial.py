@@ -176,13 +176,18 @@ def test_withdrawal_debits_before_evm_message_and_cannot_double_withdraw(environ
 
 
 @pytest.mark.parametrize("method", ["review", "consent", "reject", "expire"])
-def test_terminal_adoption_rejects_duplicate_settlement(environment, method):
+@pytest.mark.parametrize("outcome", ["ADOPTED", "REJECTED", "EXPIRED"])
+def test_terminal_outcomes_reject_duplicate_settlement(environment, method, outcome):
     vm, contract, members, _ = environment
     create(environment)
     proposal = propose(environment)
     review(environment)
     vm.sender = members[1]
-    contract.consent("CD-1", "AM-1", proposal["digest"])
+    if outcome == "EXPIRED":
+        at(vm, NOW + 500)
+        contract.expire("CD-1", "AM-1")
+    else:
+        getattr(contract, "consent" if outcome == "ADOPTED" else "reject")("CD-1", "AM-1", proposal["digest"])
     before = snapshot(contract)
     args = ("CD-1", "AM-1") + ((proposal["digest"],) if method in ("consent", "reject") else ())
     with vm.expect_revert(): getattr(contract, method)(*args)
@@ -306,3 +311,121 @@ def test_credit_accounting_rejection_happens_before_any_debit_or_emission(enviro
     before = contract.get_credit("CD-1", members[0]), contract.get_accounting("CD-1")
     with vm.expect_revert("ACCOUNTING_INVARIANT"): contract.withdraw("CD-1")
     assert (contract.get_credit("CD-1", members[0]), contract.get_accounting("CD-1")) == before
+
+
+@pytest.mark.parametrize("case", ["draft", "expired", "live", "reused_id", "wrong_version", "wrong_digest"])
+def test_proposal_safety_rejection_preserves_canonical_state_and_purse(environment, case):
+    vm, contract, members, _ = environment
+    current = create(environment, active=case not in ("draft", "expired"))
+    if case == "expired":
+        at(vm, NOW + 1000)
+        contract.expire_charter("CD-1")
+    if case in ("live", "reused_id"):
+        propose(environment)
+        if case == "reused_id":
+            at(vm, NOW + 500)
+            contract.expire("CD-1", "AM-1")
+    vm.sender = members[0]
+    vm.value = 2 * GEN
+    before = contract.get_charter("CD-1"), contract.get_accounting("CD-1"), contract.get_credit("CD-1", members[0])
+    version = 2 if case == "wrong_version" else 1
+    bound = "attacker-objective" if case == "wrong_digest" else current["digest"]
+    with vm.expect_revert():
+        contract.propose_amendment("CD-1", "AM-1", version, bound, *CHANGED, NOW + 2000)
+    vm.value = 0
+    assert (contract.get_charter("CD-1"), contract.get_accounting("CD-1"), contract.get_credit("CD-1", members[0])) == before
+
+
+@pytest.mark.parametrize("phase", ["ACTIVE", "EXPIRED"])
+def test_charter_recovery_and_ratification_reject_closed_or_active_state(environment, phase):
+    vm, contract, members, outsider = environment
+    current = create(environment, active=phase == "ACTIVE")
+    at(vm, NOW + 1000)
+    if phase == "EXPIRED":
+        vm.sender = outsider
+        contract.expire_charter("CD-1")
+    before = contract.get_charter("CD-1"), contract.get_accounting("CD-1")
+    vm.sender = members[1]
+    with vm.expect_revert("NOT_DRAFT"):
+        contract.ratify("CD-1", current["digest"])
+    assert (contract.get_charter("CD-1"), contract.get_accounting("CD-1")) == before
+    vm.sender = outsider
+    with vm.expect_revert("NOT_DRAFT"):
+        contract.expire_charter("CD-1")
+    assert (contract.get_charter("CD-1"), contract.get_accounting("CD-1")) == before
+
+
+@pytest.mark.parametrize("method", ["propose", "review", "consent", "reject", "expire"])
+def test_value_transitions_reject_broken_accounting_before_mutation(environment, method):
+    vm, contract, members, _ = environment
+    current = create(environment)
+    if method != "propose":
+        proposal = propose(environment)
+        if method in ("consent", "reject"):
+            review(environment)
+            vm.sender = members[1]
+        if method == "expire":
+            at(vm, NOW + 500)
+    from genlayer.types import bigint
+    instance = object.__getattribute__(contract, "_instance")
+    instance.charters["CD-1"].funded = bigint(1)
+    before = contract.get_charter("CD-1"), contract.get_accounting("CD-1"), contract.get_credit("CD-1", members[0])
+    with vm.expect_revert("ACCOUNTING_INVARIANT"):
+        if method == "propose":
+            vm.sender = members[0]
+            vm.value = 2 * GEN
+            contract.propose_amendment("CD-1", "AM-1", 1, current["digest"], *CHANGED, NOW + 500)
+        else:
+            args = ("CD-1", "AM-1") + ((proposal["digest"],) if method in ("consent", "reject") else ())
+            getattr(contract, method)(*args)
+    vm.value = 0
+    assert (contract.get_charter("CD-1"), contract.get_accounting("CD-1"), contract.get_credit("CD-1", members[0])) == before
+
+
+def test_pending_purse_cannot_be_withdrawn_or_reviewed_again_during_consent(environment):
+    vm, contract, members, _ = environment
+    create(environment)
+    propose(environment)
+    review(environment)
+    vm.sender = members[0]
+    before = snapshot(contract)
+    with vm.expect_revert("NO_CREDIT"):
+        contract.withdraw("CD-1")
+    with vm.expect_revert("NOT_REVIEWABLE"):
+        contract.review("CD-1", "AM-1")
+    assert snapshot(contract) == before
+
+
+def test_wallet_charter_cap_rejects_extra_entity_without_index_mutation(environment):
+    vm, contract, members, _ = environment
+    for index in range(20):
+        create(environment, f"CD-{index}", active=False)
+    before = contract.get_charters(members[0])
+    vm.sender = members[0]
+    with vm.expect_revert("CHARTER_CAP"):
+        contract.create_charter("CD-extra", "Extra charter", members[1], members[2], *TERMS, NOW + 1000)
+    assert contract.get_charters(members[0]) == before
+    assert len(read(before)) == 20
+
+
+def test_proposal_history_cap_preserves_all_refund_destinations(environment):
+    vm, contract, members, outsider = environment
+    current = create(environment)
+    for index in range(20):
+        vm.sender = members[0]
+        vm.value = 2 * GEN
+        deadline = NOW + (index + 1) * 500
+        contract.propose_amendment("CD-1", f"AM-{index}", 1, current["digest"], *CHANGED, deadline)
+        vm.value = 0
+        at(vm, deadline)
+        vm.sender = outsider
+        contract.expire("CD-1", f"AM-{index}")
+    vm.sender = members[0]
+    vm.value = 2 * GEN
+    before = contract.get_charter("CD-1"), contract.get_accounting("CD-1"), contract.get_credit("CD-1", members[0])
+    with vm.expect_revert("PROPOSAL_CAP"):
+        contract.propose_amendment("CD-1", "AM-extra", 1, current["digest"], *CHANGED, NOW + 10500)
+    vm.value = 0
+    assert (contract.get_charter("CD-1"), contract.get_accounting("CD-1"), contract.get_credit("CD-1", members[0])) == before
+    assert read(contract.get_accounting("CD-1"))["conserved"]
+    assert read(contract.get_credit("CD-1", members[0]))["amount_gen"] == 40

@@ -4,6 +4,8 @@ Verified on 2026-10-03 with `node scripts/verify-lifecycle.mjs`: PASS, 17 parent
 
 Active contract: [ConsentDeltaContract](https://explorer-studio-dev.genlayer.com/address/0x18F1689CE9241894433F44b41989C46E45a13DC5). Source commit: `aa9ea72bae865b6edcfe54030f08861fc5b0d1e7`, pinned v0.3 API/Depends identity in `deployment.json`. Explorer displayed deployment FINALIZED and GenVM SUCCESS. The superseded clock-broken revision is archived with 0 GEN and no lifecycle writes.
 
+Deployment receipt summary: Status: FINALIZED; Result: SUCCESS.
+
 Three authorized, distinct wallets co-ratified the original charter. A then proposed an amendment that removed B's free redistribution permission and locked 2 GEN. Normal consensus finalized the classification A=PRESERVED, B=MATERIAL_CHANGE, C=PRESERVED. The canonical proposal required only B's consent; C's action view exposed no consent/reject veto. Charter version 1 remained authoritative until B consented. Version 2 then became canonical and A received the fixed 2 GEN implementation credit.
 
 A second 2 GEN proposal added a weekly reporting duty for B. Validators again identified B as affected. B rejected it: the charter retained version 2 and A received the fixed refund. A third 2 GEN proposal deliberately remained REVIEWABLE beyond its deadline. The public expiry write enforced transaction time itself, closed the proposal and refunded A. A separate unratified charter expired from DRAFT.

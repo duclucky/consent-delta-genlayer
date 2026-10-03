@@ -22,7 +22,8 @@ for(const step of lifecycle.steps){
  assert(step.completed&&step.after?.charter&&step.after?.accounting?.conserved,'A finalized step lacks canonical after-state/accounting proof.');
  const raw=await rpc('eth_getTransactionByHash',[step.hash]);const receipt=safeReceipt(raw);
  assert(receipt.successful&&!raw.leader_only,'A parent is not finalized successful normal consensus.');
- methods.add(step.method);receipts.push({label:step.label,method:step.method,actor:step.actor,applicationPurseGEN:step.applicationPurseGEN,receipt,observedFinalizedAt:step.finalizedAt,explorer:`${network.explorer}/tx/${step.hash}`});
+ assert(raw.hash?.toLowerCase()===step.hash.toLowerCase()&&raw.from_address?.toLowerCase()===step.actor.toLowerCase()&&raw.to_address?.toLowerCase()===deployment.address.toLowerCase(),'Canonical transaction origin or target does not match the evidence authority row.');
+ methods.add(step.method);receipts.push({label:step.label,method:step.method,actor:raw.from_address,contract:raw.to_address,originVerified:true,applicationPurseGEN:step.applicationPurseGEN,receipt,observedFinalizedAt:step.finalizedAt,explorer:`${network.explorer}/tx/${step.hash}`});
  if(step.method==='withdraw'){
   const relations=await explorerRelations(step.hash);assert(relations.triggeredTransactions?.length===1,'Native child count mismatch.');
   const child=nativeReceipt(relations.triggeredTransactions[0],{parent:step.hash,sender:deployment.address,recipient:step.actor,amount:2n*10n**18n});
