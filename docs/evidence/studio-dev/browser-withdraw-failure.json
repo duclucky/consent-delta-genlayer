@@ -1,0 +1,29 @@
+{
+  "network": "studio-dev",
+  "hash": "0x0814c583a1ee128fb6b58c29b711de8177a32aa1eb90a5fb2208561f8b6c5465",
+  "receipt": {
+    "hash": "0x0814c583a1ee128fb6b58c29b711de8177a32aa1eb90a5fb2208561f8b6c5465",
+    "status": "FINALIZED",
+    "execution": "FINISHED_WITH_ERROR",
+    "finalized": true,
+    "successful": false,
+    "failed": true
+  },
+  "errorCode": "Mode1MessageFeesRequireGenVMPerEmissionSupport",
+  "nativeChildren": 0,
+  "creditGEN": "2",
+  "nativeBalanceGEN": "2",
+  "repairCommit": "650e16dddab50444e8f6d74b1250c65b37e9a61b",
+  "regression": {
+    "red": "empty signed ABI allocation list",
+    "green": "one recipient-bound finalization allocation, explicit fee params and matching total budget"
+  },
+  "unsignedPreview": {
+    "signed": false,
+    "feeDepositGEN": "0.000339457875003882",
+    "allocationCount": 1,
+    "receiptExecution": "SUCCESS",
+    "errorCode": null
+  },
+  "status": "FAILED_PARENT_NOT_TRANSFER_PROOF"
+}

@@ -2,12 +2,34 @@
   "observedAt": "2026-10-03",
   "command": "npm run check",
   "exitCode": 0,
-  "contract": { "lint": "PASS", "validation": "PASS", "recognizedClass": "ConsentDeltaContract", "contracts": 1, "methods": 17, "views": 8, "writes": 9 },
-  "direct": { "passed": 127, "failed": 0, "criticalSkipped": 0, "xfail": 0 },
-  "tooling": { "passed": 24, "failed": 0, "skipped": 0 },
-  "frontend": { "passed": 37, "typeScript": "PASS", "productionBuild": "PASS" },
-  "totalTests": 188,
+  "contract": {
+    "lint": "PASS",
+    "validation": "PASS",
+    "recognizedClass": "ConsentDeltaContract",
+    "contracts": 1,
+    "methods": 17,
+    "views": 8,
+    "writes": 9
+  },
+  "direct": {
+    "passed": 127,
+    "failed": 0,
+    "criticalSkipped": 0,
+    "xfail": 0
+  },
+  "tooling": {
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0
+  },
+  "frontend": {
+    "passed": 40,
+    "typeScript": "PASS",
+    "productionBuild": "PASS"
+  },
+  "totalTests": 191,
   "additionalCoverage": "Every terminal outcome replay, wrong-state/reused/current-binding proposal safety, active/closed charter recovery, corrupted accounting before value transitions, unavailable locked-purse withdrawal, entity and proposal history caps.",
   "networkEvidence": "Separate Studio Dev lifecycle-acceptance.json; direct tests are not live consensus or transfers.",
-  "warning": "Non-failing production bundle size warning remains documented."
+  "warning": "Non-failing production bundle size warning remains documented.",
+  "withdrawalRegression": "Real-SDK signed ABI pins exact native recipient, finalization, external fee params, tree/distribution total; zero or insufficient measured budget rejects before submission."
 }

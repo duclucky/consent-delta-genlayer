@@ -1,6 +1,6 @@
 # Submission evidence audit
 
-Category: Projects. One `ConsentDeltaContract`, nine writes, eight views. Test counts are 127 direct, 24 tooling and 37 frontend (188 total); there are no critical skips or expected failures. The four-source audit below distinguishes source behavior, passing tests, finalized Studio Dev evidence and public product claims. It does not certify external identity or legal rights.
+Category: Projects. One `ConsentDeltaContract`, nine writes, eight views. Test counts are 127 direct, 24 tooling and 40 frontend (191 total); there are no critical skips or expected failures. The four-source audit below distinguishes source behavior, passing tests, finalized Studio Dev evidence and public product claims. It does not certify external identity or legal rights.
 
 ## Complete authority traces
 
@@ -31,8 +31,8 @@ Public staged/tracked/historical paths and content were reviewed against an allo
 
 ## Pending evidence and limits
 
-Actual extension-wallet signing and a browser-completed consequential lifecycle are **PENDING_REAL_EVIDENCE**. The connected in-app browser reports no compatible EVM extension. Mocked provider I/O, script-signed transactions and live browser reads do not satisfy that proof. The offline checker cannot inspect this dependency and its clean result does not close the owner's final acceptance gate.
+The owner explicitly narrowed execution to the selected Chrome/OKX wallet for main actions and existing API wallets for peers. Five primary browser writes and three API peer writes finalized successfully, followed by canonical adoption version 2 and a 2 GEN native child with an exact balance decrease. Provider picker, explicit OKX selection, address-menu logout and restoration were observed. The failed first withdrawal is preserved and excluded from successful counts. Real-SDK regression plus unsigned Studio simulation precede the verified production retry. This is an honestly labeled hybrid primary journey; all-member signatures and alternative refusal/expiry/review-retry browser signatures are not claimed. See browser-acceptance.json and BROWSER-LIFECYCLE.md.
 
-Portal is unauthenticated. Its public Builders page says to connect to unlock tasks. The 1000-character description limit is the master prompt's conservative default; authenticated form limits, account-only fields and any current video requirement remain unverified. No final submission confirmation is claimed.
+Chrome has an authenticated Portal session. The Projects form has a 1000-character description, 180-character one-liner, 500-character verification outcome, seven required fields, logo requirements and an optional YouTube/X demo video field. It reports two available Project slots for the current week. Final submission is pending; no confirmation is claimed.
 
 Other limits: three wallets, bounded constitutive ASCII terms, one live amendment, fixed purse, bounded entity/history caps, representative fee profiles with 50% integer headroom, no legal identity/enforceability, external performance, external adoption or cross-chain enforcement. The non-failing frontend bundle-size warning remains documented.

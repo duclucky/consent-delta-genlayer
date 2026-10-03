@@ -1,0 +1,917 @@
+{
+  "network": "studio-dev",
+  "chainId": 61997,
+  "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "sourceCommit": "aa9ea72bae865b6edcfe54030f08861fc5b0d1e7",
+  "browser": "Chrome / OKX extension",
+  "browserActor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+  "peerActions": "Separate script-signed API evidence; owner-authorized hybrid journey, not all-member browser signatures.",
+  "status": "OWNER_AUTHORIZED_HYBRID_PRIMARY_JOURNEY_VERIFIED",
+  "providerDiscovery": [
+    "OKX",
+    "MetaMask",
+    "OKX Wallet"
+  ],
+  "explicitProviderSelection": "OKX",
+  "logoutObserved": true,
+  "steps": [
+    {
+      "label": "browser-create",
+      "charterId": "CD-9f43fd7e-9f7",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "source": "BROWSER_WALLET_SIGNED",
+      "method": "create_charter",
+      "hash": "0x9c122750df03949b5497b395d8eaa13217430dc38a30a5d572d6cfaf9465775a",
+      "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x9c122750df03949b5497b395d8eaa13217430dc38a30a5d572d6cfaf9465775a",
+      "receipt": {
+        "hash": "0x9c122750df03949b5497b395d8eaa13217430dc38a30a5d572d6cfaf9465775a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "receiptObservedAt": "2026-10-03T07:12:29.577Z",
+      "createdAt": "2026-10-03T14:09:47.736141+07:00",
+      "lastVoteAt": "1791011395",
+      "after": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "6b3c637194f08514e6d4803fbf5b1cbe90ca131a4da16ef842a1ff3e7ddd7ee9",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may freely redistribute the shared research dataset without paying a fee.",
+              "ratified": false
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "walletBalanceGEN": "2.174712069750109501",
+        "contractBalanceGEN": "0"
+      },
+      "canonicalReloadObserved": true,
+      "completed": true
+    },
+    {
+      "label": "browser-ratify-A",
+      "charterId": "CD-9f43fd7e-9f7",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "source": "BROWSER_WALLET_SIGNED",
+      "method": "ratify",
+      "hash": "0x044d60467797595d2fe8aa92c960a0d0672f367a9a7115d27ff7bcd0a05a1dcd",
+      "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x044d60467797595d2fe8aa92c960a0d0672f367a9a7115d27ff7bcd0a05a1dcd",
+      "receipt": {
+        "hash": "0x044d60467797595d2fe8aa92c960a0d0672f367a9a7115d27ff7bcd0a05a1dcd",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "receiptObservedAt": "2026-10-03T07:14:01.35Z",
+      "createdAt": "2026-10-03T14:11:46.786716+07:00",
+      "lastVoteAt": "1791011511",
+      "after": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "DRAFT",
+          "version": 1,
+          "digest": "6b3c637194f08514e6d4803fbf5b1cbe90ca131a4da16ef842a1ff3e7ddd7ee9",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may freely redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": false
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "walletBalanceGEN": "2.174712069750109501",
+        "contractBalanceGEN": "0"
+      },
+      "canonicalReloadObserved": true,
+      "completed": true
+    },
+    {
+      "label": "browser-propose",
+      "charterId": "CD-9f43fd7e-9f7",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "source": "BROWSER_WALLET_SIGNED",
+      "before": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "6b3c637194f08514e6d4803fbf5b1cbe90ca131a4da16ef842a1ff3e7ddd7ee9",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may freely redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": []
+        },
+        "accounting": {
+          "funded_gen": 0,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "walletBalanceGEN": "2.174712069750109501",
+        "contractBalanceGEN": "0"
+      },
+      "beforeObservedAt": "2026-10-03T07:15:55.685Z",
+      "method": "propose_amendment",
+      "hash": "0x51a068ed5f4cc6579d63c0a4a88b59dcbad49f0e5dcbedaf5b5387851ba0cf11",
+      "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x51a068ed5f4cc6579d63c0a4a88b59dcbad49f0e5dcbedaf5b5387851ba0cf11",
+      "receipt": {
+        "hash": "0x51a068ed5f4cc6579d63c0a4a88b59dcbad49f0e5dcbedaf5b5387851ba0cf11",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "receiptObservedAt": "2026-10-03T07:17:24.455Z",
+      "createdAt": "2026-10-03T14:16:20.972625+07:00",
+      "lastVoteAt": "1791011785",
+      "after": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "6b3c637194f08514e6d4803fbf5b1cbe90ca131a4da16ef842a1ff3e7ddd7ee9",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may freely redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-9805f7e0-969",
+          "proposal_ids": [
+            "AM-9805f7e0-969"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "proposal": {
+          "id": "AM-9805f7e0-969",
+          "charter_id": "CD-9f43fd7e-9f7",
+          "phase": "REVIEWABLE",
+          "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "base_version": 1,
+          "old_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may freely redistribute the shared research dataset without paying a fee.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "new_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791098174,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "walletBalanceGEN": "0.174633433000108266",
+        "contractBalanceGEN": "2"
+      },
+      "canonicalReloadObserved": true,
+      "completed": true
+    },
+    {
+      "label": "browser-review",
+      "charterId": "CD-9f43fd7e-9f7",
+      "proposalId": "AM-9805f7e0-969",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "source": "BROWSER_WALLET_SIGNED",
+      "before": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "6b3c637194f08514e6d4803fbf5b1cbe90ca131a4da16ef842a1ff3e7ddd7ee9",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may freely redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-9805f7e0-969",
+          "proposal_ids": [
+            "AM-9805f7e0-969"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "proposal": {
+          "id": "AM-9805f7e0-969",
+          "charter_id": "CD-9f43fd7e-9f7",
+          "phase": "REVIEWABLE",
+          "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "base_version": 1,
+          "old_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may freely redistribute the shared research dataset without paying a fee.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "new_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791098174,
+          "coverage": [],
+          "required": [],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 0,
+          "locked_gen": 2
+        },
+        "walletBalanceGEN": "0.174633433000108266",
+        "contractBalanceGEN": "2"
+      },
+      "beforeObservedAt": "2026-10-03T07:17:34.35Z",
+      "method": "review",
+      "hash": "0xa063ad1d05059ce43c4b6a8cc4e0aa5a45926fbd932976fa1cc96ccfdc251352",
+      "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0xa063ad1d05059ce43c4b6a8cc4e0aa5a45926fbd932976fa1cc96ccfdc251352",
+      "receipt": {
+        "hash": "0xa063ad1d05059ce43c4b6a8cc4e0aa5a45926fbd932976fa1cc96ccfdc251352",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "receiptObservedAt": "2026-10-03T07:19:04.442Z",
+      "createdAt": "2026-10-03T14:17:55.689427+07:00",
+      "lastVoteAt": "1791011884",
+      "after": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 1,
+          "digest": "6b3c637194f08514e6d4803fbf5b1cbe90ca131a4da16ef842a1ff3e7ddd7ee9",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may freely redistribute the shared research dataset without paying a fee.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "AM-9805f7e0-969",
+          "proposal_ids": [
+            "AM-9805f7e0-969"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 2,
+          "credits_gen": 0,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "proposal": {
+          "id": "AM-9805f7e0-969",
+          "charter_id": "CD-9f43fd7e-9f7",
+          "phase": "CONSENT_REQUIRED",
+          "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "base_version": 1,
+          "old_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may freely redistribute the shared research dataset without paying a fee.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "new_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791098174,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 2
+        },
+        "walletBalanceGEN": "0.174553655500107031",
+        "contractBalanceGEN": "2"
+      },
+      "canonicalReloadObserved": true,
+      "completed": true
+    },
+    {
+      "label": "browser-withdraw",
+      "charterId": "CD-9f43fd7e-9f7",
+      "proposalId": "AM-9805f7e0-969",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "source": "BROWSER_WALLET_SIGNED",
+      "before": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-9805f7e0-969"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 2
+        },
+        "proposal": {
+          "id": "AM-9805f7e0-969",
+          "charter_id": "CD-9f43fd7e-9f7",
+          "phase": "ADOPTED",
+          "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "base_version": 1,
+          "old_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may freely redistribute the shared research dataset without paying a fee.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "new_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791098174,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A",
+            "B"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 0
+        },
+        "walletBalanceGEN": "0.174553655500107031",
+        "contractBalanceGEN": "2"
+      },
+      "beforeObservedAt": "2026-10-03T07:20:50.862Z",
+      "method": "withdraw",
+      "hash": "0x0814c583a1ee128fb6b58c29b711de8177a32aa1eb90a5fb2208561f8b6c5465",
+      "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x0814c583a1ee128fb6b58c29b711de8177a32aa1eb90a5fb2208561f8b6c5465",
+      "receipt": {
+        "hash": "0x0814c583a1ee128fb6b58c29b711de8177a32aa1eb90a5fb2208561f8b6c5465",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_ERROR",
+        "finalized": true,
+        "successful": false,
+        "failed": true
+      },
+      "receiptObservedAt": "2026-10-03T07:23:10.958Z",
+      "createdAt": "2026-10-03T14:21:52.55541+07:00",
+      "lastVoteAt": "1791012114",
+      "completed": false,
+      "errorCode": "Mode1MessageFeesRequireGenVMPerEmissionSupport"
+    },
+    {
+      "label": "browser-withdraw-retry",
+      "charterId": "CD-9f43fd7e-9f7",
+      "proposalId": "AM-9805f7e0-969",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "source": "BROWSER_WALLET_SIGNED",
+      "before": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-9805f7e0-969"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 2,
+          "withdrawn_gen": 0,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 2
+        },
+        "proposal": {
+          "id": "AM-9805f7e0-969",
+          "charter_id": "CD-9f43fd7e-9f7",
+          "phase": "ADOPTED",
+          "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "base_version": 1,
+          "old_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may freely redistribute the shared research dataset without paying a fee.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "new_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791098174,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A",
+            "B"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 0
+        },
+        "walletBalanceGEN": "0.17447502750010509",
+        "contractBalanceGEN": "2"
+      },
+      "beforeObservedAt": "2026-10-03T07:32:28.076Z",
+      "method": "withdraw",
+      "hash": "0x64c2fcc795be3d1ed2409330cc101798b95c95d7cffee7b6fa9c7beb4b3d693a",
+      "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x64c2fcc795be3d1ed2409330cc101798b95c95d7cffee7b6fa9c7beb4b3d693a",
+      "receipt": {
+        "hash": "0x64c2fcc795be3d1ed2409330cc101798b95c95d7cffee7b6fa9c7beb4b3d693a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      },
+      "receiptObservedAt": "2026-10-03T07:36:36.157Z",
+      "createdAt": "2026-10-03T14:35:56.766958+07:00",
+      "lastVoteAt": "1791012960",
+      "after": {
+        "charter": {
+          "id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "phase": "ACTIVE",
+          "version": 2,
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791097598,
+          "members": [
+            {
+              "id": "A",
+              "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+              "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+              "ratified": true
+            },
+            {
+              "id": "B",
+              "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+              "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+              "ratified": true
+            },
+            {
+              "id": "C",
+              "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+              "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+              "ratified": true
+            }
+          ],
+          "active_proposal": "",
+          "proposal_ids": [
+            "AM-9805f7e0-969"
+          ]
+        },
+        "accounting": {
+          "funded_gen": 2,
+          "locked_gen": 0,
+          "credits_gen": 0,
+          "withdrawn_gen": 2,
+          "conserved": true
+        },
+        "credit": {
+          "charter_id": "CD-9f43fd7e-9f7",
+          "title": "Browser consent charter",
+          "amount_gen": 0
+        },
+        "proposal": {
+          "id": "AM-9805f7e0-969",
+          "charter_id": "CD-9f43fd7e-9f7",
+          "phase": "ADOPTED",
+          "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "base_version": 1,
+          "old_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may freely redistribute the shared research dataset without paying a fee.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "new_terms": [
+            "A may read and use the shared research dataset. A must retain source attribution.",
+            "B may redistribute the shared research dataset only after paying a fee to the group.",
+            "C may publish research using the shared dataset. C must preserve source attribution."
+          ],
+          "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+          "deadline": 1791098174,
+          "coverage": [
+            {
+              "member_id": "A",
+              "impact": "PRESERVED"
+            },
+            {
+              "member_id": "B",
+              "impact": "MATERIAL_CHANGE"
+            },
+            {
+              "member_id": "C",
+              "impact": "PRESERVED"
+            }
+          ],
+          "required": [
+            "B"
+          ],
+          "approved": [
+            "A",
+            "B"
+          ],
+          "attempt_count": 1,
+          "locked_gen": 0
+        },
+        "walletBalanceGEN": "2.174348722000103855",
+        "contractBalanceGEN": "0"
+      },
+      "canonicalReloadObserved": true,
+      "nativeTransferProof": {
+        "childReceipt": {
+          "hash": "0x8e489597eb98a2b2225fc85a75e486696095e05a281f84bdc91862fcdd3cffd2",
+          "parentHash": "0x64c2fcc795be3d1ed2409330cc101798b95c95d7cffee7b6fa9c7beb4b3d693a",
+          "status": "FINALIZED",
+          "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+          "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+          "valueGEN": "2",
+          "createdAt": "2026-10-03T14:36:33.915111+07:00",
+          "triggeredOn": "finalized",
+          "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x8e489597eb98a2b2225fc85a75e486696095e05a281f84bdc91862fcdd3cffd2"
+        },
+        "contractDecreaseGEN": "2",
+        "recipientBalanceBeforeGEN": "0.17447502750010509",
+        "recipientBalanceAfterGEN": "2.174348722000103855"
+      },
+      "completed": true
+    }
+  ],
+  "verifiedAt": "2026-10-03T07:37:43.1190996Z",
+  "networkProof": {
+    "icChain": "0xf22d",
+    "corsError": false,
+    "icHttpStatus": 200,
+    "walletChain": "0xf22d"
+  },
+  "finalCanonical": {
+    "charter": {
+      "id": "CD-9f43fd7e-9f7",
+      "title": "Browser consent charter",
+      "phase": "ACTIVE",
+      "version": 2,
+      "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+      "deadline": 1791097598,
+      "members": [
+        {
+          "id": "A",
+          "address": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "terms": "A may read and use the shared research dataset. A must retain source attribution.",
+          "ratified": true
+        },
+        {
+          "id": "B",
+          "address": "0x45ad397c438397a702b53a7499a78d08961d39db",
+          "terms": "B may redistribute the shared research dataset only after paying a fee to the group.",
+          "ratified": true
+        },
+        {
+          "id": "C",
+          "address": "0x45248be151f7f7e230150db23774733cd966eb45",
+          "terms": "C may publish research using the shared dataset. C must preserve source attribution.",
+          "ratified": true
+        }
+      ],
+      "active_proposal": "",
+      "proposal_ids": [
+        "AM-9805f7e0-969"
+      ]
+    },
+    "accounting": {
+      "funded_gen": 2,
+      "locked_gen": 0,
+      "credits_gen": 0,
+      "withdrawn_gen": 2,
+      "conserved": true
+    },
+    "credit": {
+      "charter_id": "CD-9f43fd7e-9f7",
+      "title": "Browser consent charter",
+      "amount_gen": 0
+    },
+    "proposal": {
+      "id": "AM-9805f7e0-969",
+      "charter_id": "CD-9f43fd7e-9f7",
+      "phase": "ADOPTED",
+      "proposer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "base_version": 1,
+      "old_terms": [
+        "A may read and use the shared research dataset. A must retain source attribution.",
+        "B may freely redistribute the shared research dataset without paying a fee.",
+        "C may publish research using the shared dataset. C must preserve source attribution."
+      ],
+      "new_terms": [
+        "A may read and use the shared research dataset. A must retain source attribution.",
+        "B may redistribute the shared research dataset only after paying a fee to the group.",
+        "C may publish research using the shared dataset. C must preserve source attribution."
+      ],
+      "digest": "4144b055ba02e079e7cf53491f848fa0eb46eedcc70690fe0fedb222202481fd",
+      "deadline": 1791098174,
+      "coverage": [
+        {
+          "member_id": "A",
+          "impact": "PRESERVED"
+        },
+        {
+          "member_id": "B",
+          "impact": "MATERIAL_CHANGE"
+        },
+        {
+          "member_id": "C",
+          "impact": "PRESERVED"
+        }
+      ],
+      "required": [
+        "B"
+      ],
+      "approved": [
+        "A",
+        "B"
+      ],
+      "attempt_count": 1,
+      "locked_gen": 0
+    },
+    "walletBalanceGEN": "2.174348722000103855",
+    "contractBalanceGEN": "0"
+  },
+  "limitations": "Five primary writes are actual Chrome/OKX signatures. Peer ratification/consent are API-signed under explicit owner authorization. Alternative rejection/expiry/retry writes have local and script evidence; they are not claimed as browser signatures. One failed withdrawal is retained and excluded from successful counts."
+}

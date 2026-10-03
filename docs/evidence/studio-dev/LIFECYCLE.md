@@ -1,6 +1,6 @@
 # Finalized Studio Dev lifecycle
 
-Verified on 2026-10-03 with `node scripts/verify-lifecycle.mjs`: PASS, 17 parent transactions, three native child transfers, all nine write methods, canonical charter version 2, and zero remaining contract GEN. This is script-signed network evidence. Browser-wallet signing is still `PENDING_REAL_EVIDENCE`.
+Verified on 2026-10-03 with `node scripts/verify-lifecycle.mjs`: PASS, 17 parent transactions, three native child transfers, all nine write methods, canonical charter version 2, and zero remaining contract GEN. This is script-signed network evidence. The separately verified owner-authorized Chrome/OKX primary journey and API peer actions are recorded in [BROWSER-LIFECYCLE.md](BROWSER-LIFECYCLE.md).
 
 Active contract: [ConsentDeltaContract](https://explorer-studio-dev.genlayer.com/address/0x18F1689CE9241894433F44b41989C46E45a13DC5). Source commit: `aa9ea72bae865b6edcfe54030f08861fc5b0d1e7`, pinned v0.3 API/Depends identity in `deployment.json`. Explorer displayed deployment FINALIZED and GenVM SUCCESS. The superseded clock-broken revision is archived with 0 GEN and no lifecycle writes.
 

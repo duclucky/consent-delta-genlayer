@@ -3,7 +3,7 @@
   "network": "studio-dev",
   "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
   "sourceCommit": "aa9ea72bae865b6edcfe54030f08861fc5b0d1e7",
-  "verifiedAt": "2026-10-03T06:36:13.222Z",
+  "verifiedAt": "2026-10-03T07:53:57.576Z",
   "status": "PASS",
   "parentTransactions": 17,
   "nativeChildren": 3,
@@ -438,5 +438,5 @@
       "leaderOnly": false
     }
   ],
-  "browserWalletEvidence": "PENDING_REAL_EVIDENCE"
+  "browserWalletEvidence": "SEPARATE: run verify-browser-lifecycle.mjs; this ledger proves the script lane only"
 }

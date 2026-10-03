@@ -1,0 +1,194 @@
+{
+  "command": "node scripts/verify-browser-lifecycle.mjs",
+  "verifiedAt": "2026-10-03T07:55:11.371Z",
+  "network": "studio-dev",
+  "address": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+  "sourceCommit": "aa9ea72bae865b6edcfe54030f08861fc5b0d1e7",
+  "status": "PASS_OWNER_AUTHORIZED_HYBRID_PRIMARY_JOURNEY",
+  "browser": "Chrome / OKX extension",
+  "browserActor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+  "browserSignedWrites": 5,
+  "peerApiSignedWrites": 3,
+  "failedParentsExcluded": [
+    "0x0814c583a1ee128fb6b58c29b711de8177a32aa1eb90a5fb2208561f8b6c5465"
+  ],
+  "receipts": [
+    {
+      "method": "create_charter",
+      "source": "BROWSER_WALLET_SIGNED",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x9c122750df03949b5497b395d8eaa13217430dc38a30a5d572d6cfaf9465775a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "ratify",
+      "source": "BROWSER_WALLET_SIGNED",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x044d60467797595d2fe8aa92c960a0d0672f367a9a7115d27ff7bcd0a05a1dcd",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "propose_amendment",
+      "source": "BROWSER_WALLET_SIGNED",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x51a068ed5f4cc6579d63c0a4a88b59dcbad49f0e5dcbedaf5b5387851ba0cf11",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "review",
+      "source": "BROWSER_WALLET_SIGNED",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0xa063ad1d05059ce43c4b6a8cc4e0aa5a45926fbd932976fa1cc96ccfdc251352",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "withdraw",
+      "source": "BROWSER_WALLET_SIGNED",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x64c2fcc795be3d1ed2409330cc101798b95c95d7cffee7b6fa9c7beb4b3d693a",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "ratify",
+      "source": "SCRIPT_SIGNED_API",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x725db7fc22535f5b7d22aa0276a2334e77d4f4566b8b32731c8b9bfca283da86",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "ratify",
+      "source": "SCRIPT_SIGNED_API",
+      "actor": "0x45248be151F7f7e230150db23774733Cd966Eb45",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x76441f7e706b35d7330a4dd29614fb414b6e449800dffcd7e7e999b4b675798e",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    },
+    {
+      "method": "consent",
+      "source": "SCRIPT_SIGNED_API",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "contract": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+      "originVerified": true,
+      "receipt": {
+        "hash": "0x9d96421bb00408bc52901a1cdca486cef7cbd792566c394623f01d0c0586ef86",
+        "status": "FINALIZED",
+        "execution": "FINISHED_WITH_RETURN",
+        "finalized": true,
+        "successful": true,
+        "failed": false
+      }
+    }
+  ],
+  "child": {
+    "hash": "0x8e489597eb98a2b2225fc85a75e486696095e05a281f84bdc91862fcdd3cffd2",
+    "parentHash": "0x64c2fcc795be3d1ed2409330cc101798b95c95d7cffee7b6fa9c7beb4b3d693a",
+    "status": "FINALIZED",
+    "sender": "0x18F1689CE9241894433F44b41989C46E45a13DC5",
+    "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "valueGEN": "2",
+    "createdAt": "2026-10-03T07:36:33.915111+00:00",
+    "triggeredOn": "finalized",
+    "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x8e489597eb98a2b2225fc85a75e486696095e05a281f84bdc91862fcdd3cffd2"
+  },
+  "contractDecreaseGEN": "2",
+  "recipientBeforeGEN": "0.17447502750010509",
+  "recipientAfterGEN": "2.174348722000103855",
+  "charter": {
+    "id": "CD-9f43fd7e-9f7",
+    "version": 2
+  },
+  "proposal": {
+    "id": "AM-9805f7e0-969",
+    "phase": "ADOPTED",
+    "required": [
+      "B"
+    ]
+  },
+  "attempt": {
+    "index": 1,
+    "coverage": [
+      {
+        "member_id": "A",
+        "impact": "PRESERVED"
+      },
+      {
+        "member_id": "B",
+        "impact": "MATERIAL_CHANGE"
+      },
+      {
+        "member_id": "C",
+        "impact": "PRESERVED"
+      }
+    ]
+  },
+  "accounting": {
+    "funded_gen": 2,
+    "locked_gen": 0,
+    "credits_gen": 0,
+    "withdrawn_gen": 2,
+    "conserved": true
+  },
+  "contractBalanceGEN": "0",
+  "funding": {
+    "hash": "0xd07e20e3f3737636f1e546fa9b961c62752624f726cd828a340c68eda24eb6be",
+    "valueGEN": "2",
+    "sender": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+    "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199"
+  },
+  "limitations": "Five primary writes are actual Chrome/OKX signatures. Peer ratification/consent are API-signed under explicit owner authorization. Alternative rejection/expiry/retry writes have local and script evidence; they are not claimed as browser signatures. One failed withdrawal is retained and excluded from successful counts."
+}
