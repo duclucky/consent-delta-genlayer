@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-03T04:31:08.513Z",
+  "command": "node scripts/smoke.mjs",
+  "network": {
+    "chainId": 61997,
+    "icRpc": "https://studio-next.genlayer.com/api",
+    "walletRpc": "https://studio-dev.genlayer.com/api",
+    "consensus": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575"
+  },
+  "signed": false,
+  "execution": "SUCCESS",
+  "mode": "leader",
+  "passed": true
+}

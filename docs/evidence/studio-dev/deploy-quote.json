@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-03T04:31:55.237Z",
+  "command": "node scripts/deploy-quote.mjs",
+  "signed": false,
+  "hasRecommendedPreset": true,
+  "protocolDepositGEN": "0.000094870500002588",
+  "leaderTimeunits": 100,
+  "validatorTimeunits": 200,
+  "executionBudgetGEN": "0.0000948705",
+  "messageBudgetGEN": "0"
+}
