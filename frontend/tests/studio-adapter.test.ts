@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { abi, decodeInputData } from 'genlayer-js';
+import { abi, decodeInputData, deriveExternalMessageCallKey, encodeExternalMessageFeeParams, MessageType } from 'genlayer-js';
 import { studioDevnet } from 'genlayer-js/chains';
 import { decodeFunctionData, toHex, type Abi } from 'viem';
 import { createStudioAdapter, switchStudioNetwork, type FeeProfiles } from '../src/studio-adapter';
@@ -39,7 +39,7 @@ function offline(method: Write, terminal = 'SUCCESS', envelopeReverted = false) 
     const body = JSON.parse(String(options.body));
     calls.push({ url: String(url), method: body.method, params: body.params });
     let result: unknown;
-    if (body.method === 'sim_getFeeConfig') result = { enabled: true, policy: { genPerTimeUnit: '1', storageUnitPrice: '0', receiptGasPrice: '0', timeUnitOverlayBps: '0' } };
+    if (body.method === 'sim_getFeeConfig') result = { enabled: true, policy: { genPerTimeUnit: '1', storageUnitPrice: '0', receiptGasPrice: method==='withdraw'?'250000000':'0', timeUnitOverlayBps: '0' } };
     else if (body.method === 'eth_getTransactionCount') result = '0x0';
     else if (body.method === 'eth_estimateGas') result = '0x30d40';
     else if (body.method === 'eth_gasPrice') result = '0x0';
@@ -65,6 +65,23 @@ function offline(method: Write, terminal = 'SUCCESS', envelopeReverted = false) 
 }
 
 describe('actual project adapter with real SDK; only RPC/provider I/O intercepted', () => {
+  it('pins the native withdrawal allocation to the selected recipient and finalization in the signed SDK ABI', async () => {
+    const {config,provider}=offline('withdraw');
+    config.feeProfiles.methods.withdraw!.totalMessageFees='187500000000000';
+    await createStudioAdapter(config).write('withdraw',['CD-test'],0,vi.fn());
+    const sent=provider.request.mock.calls.find(([request])=>request.method==='eth_sendTransaction')![0] as {params:{data:`0x${string}`}[]};
+    const decoded=decodeFunctionData({abi:studioDevnet.consensusMainContract!.abi as Abi,data:sent.params[0].data});
+    const params=decoded.args![0] as {userValue:bigint;feesDistribution:{totalMessageFees:bigint};messageAllocations:{messageType:number;onAcceptance:boolean;parentIndex:bigint;recipient:string;callKey:string;budget:bigint;feeParams:string}[]};
+    expect(params.userValue).toBe(0n);
+    expect(params.messageAllocations).toHaveLength(1);
+    expect(params.feesDistribution.totalMessageFees).toBe(150000000000000n);
+    expect(params.messageAllocations[0]).toMatchObject({messageType:MessageType.External,onAcceptance:false,parentIndex:(1n<<256n)-1n,recipient:account,callKey:deriveExternalMessageCallKey('0x'),budget:150000000000000n,feeParams:encodeExternalMessageFeeParams({gasLimit:500000n,maxGasPrice:300000000n})});
+  });
+  it.each(['0','1'])('refuses a withdrawal whose measured native budget is %s before wallet submission',async budget=>{
+    const {config,provider}=offline('withdraw');config.feeProfiles.methods.withdraw!.totalMessageFees=budget;
+    await expect(createStudioAdapter(config).write('withdraw',['CD-test'],0,vi.fn())).rejects.toThrow(budget==='0'?'measured native transfer':'exceeds its measured budget');
+    expect(provider.request.mock.calls.some(([request])=>request.method==='eth_sendTransaction')).toBe(false);
+  });
   it('retains the submitted hash when the SDK rejects the EVM envelope after signing',async()=>{
     const {config}=offline('ratify','SUCCESS',true);const progress:Progress[]=[];
     await expect(createStudioAdapter(config).write('ratify',['CD-test','digest'],0,event=>progress.push(event))).rejects.toThrow('could not be confirmed');

@@ -1,4 +1,4 @@
-import { createClient } from 'genlayer-js';
+import { createClient, deriveExternalMessageCallKey, encodeExternalMessageFeeParams, MessageType } from 'genlayer-js';
 import { studioDevnet } from 'genlayer-js/chains';
 import { CalldataAddress, TransactionHashVariant, type CalldataEncodable, type FeeEstimateOptions } from 'genlayer-js/types';
 import { formatUnits, hexToBytes } from 'viem';
@@ -97,11 +97,25 @@ export function createStudioAdapter(config: Config): ContractAdapter {
         return response.json();
       });
       if (profiles.version !== 1 || profiles.network !== 'studio-dev' || !profiles.methods[method]) throw new Error('This action needs a measured Studio Dev fee profile before signing.');
-      const quote = await writes.estimateTransactionFees(quotedProfile(profiles.methods[method]!));
+      const estimateOptions = quotedProfile(profiles.methods[method]!);
+      let quote = await writes.estimateTransactionFees(estimateOptions);
+      if (method === 'withdraw') {
+        if (BigInt(estimateOptions.totalMessageFees ?? 0) <= 0n) throw new Error('Withdrawal needs a measured native transfer fee budget.');
+        // The successful Studio native-transfer profile used a 500000 gas bound.
+        const gasLimit = 500000n;
+        const maxGasPrice = quote.distribution.receiptFeeMaxGasPrice;
+        if (maxGasPrice <= 0n || gasLimit * maxGasPrice > BigInt(estimateOptions.totalMessageFees!)) throw new Error('The current native transfer fee exceeds its measured budget.');
+        estimateOptions.totalMessageFees = gasLimit * maxGasPrice;
+        estimateOptions.messageAllocations = [{ messageType: MessageType.External, onAcceptance: false,
+          recipient: account as Address, callKey: deriveExternalMessageCallKey('0x'), budget: gasLimit * maxGasPrice,
+          feeParams: encodeExternalMessageFeeParams({ gasLimit, maxGasPrice }) }];
+        quote = await writes.estimateTransactionFees(estimateOptions);
+      }
       progress({ stage: 'Signing', message: `Application purse: ${valueGen} GEN. Quoted protocol deposit: ${formatUnits(quote.feeValue, 18)} GEN. Unused protocol budget is refunded at finalization; wallet gas is separate.` });
       let hash: unknown;
       try { hash = await writes.writeContract({ address: contractAddress, functionName: method, args: encoded,
-        value: BigInt(valueGen) * GEN, fees: { distribution: quote.distribution, feeValue: quote.feeValue } }); }
+        value: BigInt(valueGen) * GEN, fees: { distribution: quote.distribution, feeValue: quote.feeValue,
+          ...(quote.messageAllocations ? { messageAllocations: quote.messageAllocations } : {}) } }); }
       catch { progress({ stage: 'Failed', hash: submitted, message: submitted ? 'The transaction was submitted but its result could not be confirmed. Check it before retrying.' : 'The wallet did not complete this transaction.' }); throw new Error('The wallet transaction could not be confirmed.'); }
       if (typeof hash !== 'string' || !/^0x[0-9a-fA-F]{64}$/.test(hash)) throw new Error('The wallet did not return a verifiable transaction hash.');
       if (!submitted) progress({ stage: 'Submitted', hash });
