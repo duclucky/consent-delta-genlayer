@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { LogOut, Wallet, X } from 'lucide-react';
 import { validAddress, type Address } from './adapter';
+import { switchStudioNetwork } from './studio-adapter';
 
 export interface Provider {
   request(args: { method: string; params?: unknown[] }): Promise<unknown>;
@@ -18,6 +19,10 @@ export function injectedWallets(): DetectedWallet[] {
 type WalletState = { address?: Address; provider?: Provider; name?: string; wallets: DetectedWallet[]; open: () => void; disconnect: () => void };
 const Context = createContext<WalletState | null>(null);
 export const useWallet = () => { const x = useContext(Context); if (!x) throw new Error('Wallet context is unavailable'); return x; };
+const choiceKey = 'consent-delta:wallet-choice';
+function remember(wallet?: DetectedWallet) {
+  try { if (wallet) localStorage.setItem(choiceKey, JSON.stringify({ id: wallet.id, name: wallet.name })); else localStorage.removeItem(choiceKey); } catch { /* Storage is optional UI preference only. */ }
+}
 
 export function WalletContext({ children }: { children: ReactNode }) {
   const [wallets, setWallets] = useState<DetectedWallet[]>([]);
@@ -38,23 +43,36 @@ export function WalletContext({ children }: { children: ReactNode }) {
     return () => window.removeEventListener('eip6963:announceProvider', announced);
   }, []);
   useEffect(() => {
+    if (selection) return;
+    let previous: { id?: string; name?: string };
+    try { previous = JSON.parse(localStorage.getItem(choiceKey) ?? '{}'); } catch { return; }
+    const wallet = wallets.find(w => w.id === previous?.id && w.name === previous?.name);
+    if (!wallet || wallets.filter(w => w.name === previous?.name).length !== 1) return;
+    let canceled = false;
+    // Only query existing permission. Restoration never requests new accounts.
+    void wallet.provider.request({ method: 'eth_accounts' }).then(accounts => {
+      if (!canceled && Array.isArray(accounts) && validAddress(String(accounts[0]))) setSelection({ address: accounts[0] as Address, provider: wallet.provider, name: wallet.name });
+    }).catch(() => { /* A locked or unavailable wallet stays disconnected. */ });
+    return () => { canceled = true; };
+  }, [wallets, selection]);
+  useEffect(() => {
     if (shown) dialog.current?.showModal(); else dialog.current?.close();
   }, [shown]);
   useEffect(() => {
     if (!selection) return;
-    const accounts = (...args: unknown[]) => { const next = args[0]; if (!Array.isArray(next) || !validAddress(String(next[0]))) setSelection(undefined); else setSelection(x => x ? { ...x, address: next[0] as Address } : undefined); };
-    const disconnected = () => setSelection(undefined);
+    const disconnected = () => { remember(); setSelection(undefined); };
+    const accounts = (...args: unknown[]) => { const next = args[0]; if (!Array.isArray(next) || !validAddress(String(next[0]))) disconnected(); else setSelection(x => x ? { ...x, address: next[0] as Address } : undefined); };
     selection.provider.on?.('accountsChanged', accounts);
     selection.provider.on?.('disconnect', disconnected);
     return () => { selection.provider.removeListener?.('accountsChanged', accounts); selection.provider.removeListener?.('disconnect', disconnected); };
   }, [selection?.provider]);
   const connect = async (wallet: DetectedWallet) => {
     setBusy(true); setError('');
-    try { const response = await wallet.provider.request({ method: 'eth_requestAccounts' }); if (!Array.isArray(response) || !validAddress(String(response[0]))) throw new Error('This wallet did not return a valid account.'); setSelection({ address: response[0] as Address, provider: wallet.provider, name: wallet.name }); setShown(false); }
+    try { const response = await wallet.provider.request({ method: 'eth_requestAccounts' }); if (!Array.isArray(response) || !validAddress(String(response[0]))) throw new Error('This wallet did not return a valid account.'); await switchStudioNetwork(wallet.provider); remember(wallet); setSelection({ address: response[0] as Address, provider: wallet.provider, name: wallet.name }); setShown(false); }
     catch { setError('The wallet connection was not approved. Unlock your wallet, then choose it again.'); }
     finally { setBusy(false); }
   };
-  return <Context.Provider value={{ ...selection, wallets, open: () => { setError(''); setShown(true); }, disconnect: () => setSelection(undefined) }}>
+  return <Context.Provider value={{ ...selection, wallets, open: () => { setError(''); setShown(true); }, disconnect: () => { remember(); setSelection(undefined); } }}>
     {children}
     <dialog ref={dialog} onCancel={() => setShown(false)} onClose={() => setShown(false)} aria-labelledby="wallet-title">
       <div className="dialog-top"><div><p className="eyebrow">Your choice</p><h2 id="wallet-title">Connect a wallet</h2></div><button className="icon-button" aria-label="Close wallet selection" onClick={() => setShown(false)}><X aria-hidden="true" /></button></div>

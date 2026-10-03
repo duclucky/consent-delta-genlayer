@@ -1,0 +1,20 @@
+# Studio Dev integration
+
+This project targets Studio Dev, chain 61997, using `genlayer-js@2.0.0-rc.1` and its `studioDevnet` definition. The SDK supplies the EVM wallet chain, GEN currency and consensus contract ABI/address. The IC transport uses the workspace-locked `https://studio-next.genlayer.com/api` through a same-origin `/genlayer-rpc` read-only proxy. Current official documentation names `https://studio-dev.genlayer.com/api` as the canonical endpoint; the locked IC endpoint is retained and independently checked for chain identity. The two names are not relabeled as different networks.
+
+Primary references, checked 2026-10-03:
+
+- [Consensus v0.6 migration](https://docs.genlayer.com/developers/consensus-v06-migration)
+- [Studio environment definitions](https://docs.genlayer.com/developers/intelligent-contracts/tools/genlayer-studio)
+- [Network configuration](https://docs.genlayer.com/developers/intelligent-contracts/deploying/network-configuration)
+- [Fee profiling and estimation](https://docs.genlayer.com/developers/decentralized-applications/fee-profiling-and-estimation)
+
+The browser discovers EIP-6963 and compatible injected EVM providers. It requests permission only from the user's selected provider, switches/adds the current SDK chain, validates the returned chain and account, and supplies the selected account to `createClient`. Per-call string account overrides are absent. Reload restores only a uniquely identified prior provider choice using existing `eth_accounts` permission. Logout removes that UI preference. No onchain records or balances are stored in browser storage.
+
+Writes encode the 2 GEN application purse separately from the quoted protocol fee deposit. A measured Studio Dev method profile is required before signing. No placeholder profile is shipped. Finality requires both FINALIZED and successful execution, followed by canonical `latest-final` view reads. The hash is retained immediately after wallet submission, including SDK envelope failures. Failed/pending transactions are never automatically resubmitted.
+
+`npm run check` includes a real-SDK project-adapter regression. Only test RPC/provider I/O is intercepted; SDK account normalization and EVM ABI encoding remain real. The legacy shared offline canary was also attempted: it lacks current RC receipt/block RPC fixtures and uses the old positional ABI assertions. It was stopped after unsupported receipt/block polling. That legacy result is not counted as passing; the version-matched project regression covers those account/GEN boundaries.
+
+Browser-local read proof on 2026-10-03: the real app at `http://127.0.0.1:5177` fetched `/genlayer-rpc` from its page context. `eth_chainId` returned HTTP 200 and `0xf22d`; `sim_getFeeConfig` returned HTTP 200 with fees enabled. Neither produced a fetch/CORS error. The proxy projects fee policy and receipt allowlists and rejects transaction broadcasts. A stale error-page tab was replaced with a fresh tab in the same browser; no browser security protection was bypassed.
+
+Actual extension-wallet writes, deployed address, measured method profiles, Studio Dev consensus and native transfer evidence remain pending. Offline fixtures and browser read proof do not establish these outcomes.

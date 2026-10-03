@@ -8,9 +8,11 @@ test('raw Studio leader execution is required and private data is projected out'
   }, trace: 'DO_NOT_EXPORT', validator_configs: ['DO_NOT_EXPORT'] });
   assert.deepEqual(result, { hash, status: 'FINALIZED', execution: 'SUCCESS', finalized: true, successful: true, failed: false });
   assert.equal(JSON.stringify(result).includes('DO_NOT_EXPORT'), false);
+  assert.deepEqual(safeReceipt(result), result);
 });
 test('normalized SDK execution result and RPC envelopes', () => {
   assert.equal(safeReceipt({ result: { status: 'FINALIZED', executionResult: 'FINISHED_WITH_RETURN' } }).successful, true);
+  assert.equal(safeReceipt({ status: 7, statusName: 'FINALIZED', result: 0, txExecutionResultName: 'FINISHED_WITH_RETURN', txId: hash }).successful, true);
 });
 test('terminal failure, absent execution, canceled and undetermined never become success', () => {
   for (const receipt of [{ status: 'FINALIZED' }, { status: 'FINALIZED', execution_result: 'ERROR' },

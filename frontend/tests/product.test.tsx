@@ -15,7 +15,7 @@ function adapter(actions: string[]): ContractAdapter {
   return { configured:true,list:vi.fn(async()=>[charter]),charter:vi.fn(async()=>charter),proposal:vi.fn(async()=>proposal),actions:vi.fn(async()=>actions),credits:vi.fn(async()=>[{charter_id:charter.id,title:charter.title,amount_gen:2}]),write:vi.fn(async(_m,_args,_v,progress)=>{progress({stage:'Submitted',hash:'0xabc'});progress({stage:'Accepted',hash:'0xabc'});progress({stage:'Finalized',hash:'0xabc'});}) };
 }
 function setup(route: string, api=unavailableAdapter) {
-  const provider: Provider = {request:vi.fn(async()=>[b]),isMetaMask:true}; window.ethereum=provider;
+  const provider: Provider = {request:vi.fn(async({method})=>method === 'eth_chainId' ? '0xf22d' : method === 'wallet_switchEthereumChain' ? null : [b]),isMetaMask:true}; window.ethereum=provider;
   window.scrollTo=vi.fn();
   render(<MemoryRouter initialEntries={[route]}><WalletContext><App adapter={api}/></WalletContext></MemoryRouter>);
   return provider;
@@ -26,6 +26,19 @@ async function connect() {
   await waitFor(()=>expect(screen.getAllByRole('button',{name:/0x2222/}).length).toBeGreaterThan(0));
 }
 describe('complete product routes and honest states',()=>{
+  it('restores only the previously chosen and already-authorized wallet without a permission prompt',async()=>{
+    localStorage.setItem('consent-delta:wallet-choice',JSON.stringify({id:'injected-0',name:'MetaMask'}));
+    const p=setup('/account',adapter([]));
+    await screen.findByRole('button',{name:'Disconnect this wallet'});
+    expect(p.request).toHaveBeenCalledWith({method:'eth_accounts'});
+    expect(p.request).not.toHaveBeenCalledWith({method:'eth_requestAccounts'});
+  });
+  it('remembers only a harmless provider choice and removes it on logout',async()=>{
+    setup('/account',adapter([]));await connect();
+    expect(JSON.parse(localStorage.getItem('consent-delta:wallet-choice')!)).toEqual({id:'injected-0',name:'MetaMask'});
+    fireEvent.click(screen.getByRole('button',{name:'Disconnect this wallet'}));
+    expect(localStorage.getItem('consent-delta:wallet-choice')).toBeNull();
+  });
   it('connects all persistent navigation destinations from the value-first entry',()=>{setup('/');expect(screen.getByRole('heading',{name:/Keep consent intact/})).toBeTruthy();expect(screen.getByRole('navigation').textContent).toContain('Charters');expect(screen.getByRole('link',{name:'Create a charter'}).getAttribute('href')).toBe('/charters/new');expect(screen.getByText(/No on-chain records or transactions/)).toBeTruthy();});
   it.each(['/charters','/charters/CD-test','/charters/CD-test/amend','/charters/CD-test/proposals/AM-test','/account'])('does not invent canonical records at %s',(route)=>{setup(route);expect(screen.getByText(/No on-chain records or transactions/)).toBeTruthy();expect(screen.queryByText('Shared dataset charter')).toBeNull();});
   it('shows useful supporting help and a recoverable unknown route',()=>{setup('/help');expect(screen.getByRole('heading',{name:'How consent works'})).toBeTruthy();expect(screen.getByRole('heading',{name:'What happens to the GEN?'})).toBeTruthy();});

@@ -1,0 +1,13 @@
+{
+  "phase": 7,
+  "at": "2026-10-03",
+  "sdk": "genlayer-js@2.0.0-rc.1",
+  "command": "npm run check",
+  "exit": 0,
+  "output": "Lint passed (3 checks); Validation passed: ConsentDeltaContract, 17 methods (8 view, 9 write); 103 direct tests passed in 16.11s; 11 receipt/proxy tests passed; 37 frontend tests passed; TypeScript passed; production build passed",
+  "browser_command": "CUA tab 3 CDP Runtime.evaluate: page-context fetch('/genlayer-rpc') for eth_chainId and sim_getFeeConfig",
+  "browser_output": { "origin": "http://127.0.0.1:5177", "chain": { "http": 200, "chainId": "0xf22d", "error": null }, "fees": { "http": 200, "enabled": true, "error": null }, "horizontal_overflow": false, "injected_wallet": false },
+  "real_sdk_regression": "Actual SDK normalizes selected account and encodes EVM addTransaction with exact application purse; only offline provider/RPC I/O is intercepted. Tests cover canonical reload, failed execution, submitted-hash retention, chain add/switch, account change and missing measured profile.",
+  "legacy_canary": "Attempted shared sdk-wallet-preflight.test.mjs; unsupported RC eth_getTransactionReceipt/eth_blockNumber fixtures caused polling, stopped. Not counted as passing. Version-matched actual project-adapter regression passes.",
+  "limits": "No live extension-wallet write, deployment, measured method profile, independent consensus or native transfer is claimed. The production bundle reports a non-fatal large-chunk warning."
+}
