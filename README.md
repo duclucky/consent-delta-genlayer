@@ -18,7 +18,7 @@ Studio Dev: `0x18F1689CE9241894433F44b41989C46E45a13DC5`.
 
 ## Verification
 
-Use Node.js 24 and Python 3.12. Create `.venv`, install `requirements.txt`, run `npm ci`, then `npm run check`. The check validates the single contract, 103 direct tests, 21 tooling tests, 37 frontend tests, TypeScript and the production build. It requires no wallet keys or network writes.
+Use Node.js 24 and Python 3.12. Create `.venv`, install `requirements.txt`, run `npm ci`, then `npm run check`. The check validates the single contract, 103 direct tests, 24 tooling tests, 37 frontend tests, TypeScript and the production build. It requires no wallet keys or network writes.
 
 ## Run the frontend
 

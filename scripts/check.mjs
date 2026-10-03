@@ -11,7 +11,7 @@ const checks = [
   [python, ['scripts/genvm_lint.py', 'check', 'contracts/consent_delta.py']],
   [python, ['-m', 'pytest', 'tests/direct', '-q', '--tb=short']],
   [process.execPath, ['--check', 'scripts/check.mjs']],
-  [process.execPath, ['--test', 'scripts/receipt.test.mjs', 'scripts/rpc-proxy.test.mjs', 'scripts/write-quote.test.mjs', 'scripts/fee-observation.test.mjs', 'scripts/native-transfer.test.mjs']],
+  [process.execPath, ['--test', 'scripts/receipt.test.mjs', 'scripts/rpc-proxy.test.mjs', 'scripts/write-quote.test.mjs', 'scripts/fee-observation.test.mjs', 'scripts/native-transfer.test.mjs', 'scripts/hosted-proxy.test.mjs']],
   [process.execPath, [path.join(path.dirname(process.execPath), 'node_modules/npm/bin/npm-cli.js'), '--workspace', 'frontend', 'run', 'check']],
 ];
 // npm_execpath is the actual CLI used by npm (including bundled runtimes).

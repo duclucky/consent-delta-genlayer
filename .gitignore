@@ -14,3 +14,6 @@ __pycache__/
 artifacts/
 design-system/
 docs/evidence/local/screenshots/
+
+.vercel
+.env*
