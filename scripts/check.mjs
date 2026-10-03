@@ -16,7 +16,7 @@ const checks = [
 ];
 // npm_execpath is the actual CLI used by npm (including bundled runtimes).
 if (process.env.npm_execpath) checks[4][1][0] = process.env.npm_execpath;
-for (const script of ['network', 'inspect', 'smoke', 'deploy-quote', 'deploy']) checks.unshift([process.execPath, ['--check', `scripts/${script}.mjs`]]);
+for (const script of ['network', 'inspect', 'smoke', 'deploy-quote', 'deploy', 'lifecycle']) checks.unshift([process.execPath, ['--check', `scripts/${script}.mjs`]]);
 for (const [command, args] of checks) {
   const result = spawnSync(command, args, { env, stdio: 'inherit' });
   if (result.error) throw result.error;
