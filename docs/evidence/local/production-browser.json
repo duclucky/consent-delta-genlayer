@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-03",
+  "url": "https://consent-delta-genlayer.vercel.app",
+  "result": "PASS_READ_PROOF",
+  "commands": ["curl.exe -I --max-time 30 https://consent-delta-genlayer.vercel.app", "curl.exe -s --max-time 30 https://consent-delta-genlayer.vercel.app", "CUA production browser canonical charter/outcome navigation", "CUA page-context fetch('/genlayer-rpc')"],
+  "httpStatus": 200,
+  "htmlProjectName": "ConsentDelta",
+  "htmlReactRoot": "<div id=\"root\"></div>",
+  "canonicalCharter": "CD-live-035",
+  "canonicalVersion": 2,
+  "amendmentHistoryEntries": 3,
+  "adoptedAmendment": "AM-adopt",
+  "impactLabels": { "A": "Rights unchanged", "B": "Consent required", "C": "Rights unchanged" },
+  "requiredConsent": { "B": "Approved" },
+  "sameOriginBrowserRequests": [
+    { "method": "eth_chainId", "httpStatus": 200, "result": "0xf22d", "rpcError": false },
+    { "method": "sim_getFeeConfig", "httpStatus": 200, "feesEnabled": true, "rpcError": false }
+  ],
+  "browserFetchOrCorsError": false,
+  "walletModal": "No compatible EVM wallet was detected.",
+  "browserWalletWriteEvidence": "PENDING_REAL_EVIDENCE",
+  "limitations": "The connected in-app browser has no EVM extension. Script-signed writes and SDK adapter tests do not establish extension-wallet signing."
+}

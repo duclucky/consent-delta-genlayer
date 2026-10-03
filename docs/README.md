@@ -3,8 +3,8 @@
 ## Identity
 
 - Idea: IDEA-035; project/slug: ConsentDelta / consent-delta.
-- Category: Projects. Status: BUILDING (full specification locked; implementation/live evidence pending).
-- Repository target: https://github.com/duclucky/consent-delta (not yet published).
+- Category: Projects. Status: BUILT_AND_DEPLOYED; browser-wallet evidence and submission pending.
+- Public repository: https://github.com/duclucky/consent-delta-genlayer.
 - Network: Studio Dev, chain 61997; runtime/template compatibility verified read-only.
 
 ## One-sentence product hook
@@ -43,7 +43,7 @@ All fourteen design admission gates passed before registration. Admission is dis
 | Contract count | PASS | Exactly one owner of constitutive state, judgment, consent and accounting; no mirror consumer. |
 | Differentiation | PASS | Impact-derived minority consent and revision adoption differ in question/state/consequence/reuse from nearest primitives below. |
 | Claim-to-code | PASS | All product claims have complete method/view/test/planned evidence rows. |
-| Full lifecycle | PASS (design admission) | Entire browser workflow is mapped. Actual extension-wallet and finalized lifecycle proof remain required and pending. |
+| Full lifecycle | PASS (design admission) | Entire browser workflow is mapped; the script-signed finalized lifecycle and native transfers now pass. Actual extension-wallet execution remains required and pending. |
 | Scope honesty | PASS | Three wallets, bounded constitutive terms, fixed purse; no legal identity/enforceability, offchain performance, cross-chain proof or adoption claim. |
 
 ## Actors, roles and incentives
@@ -182,14 +182,14 @@ Duplicates revert before mutation rather than reapply. Terminal proposals reject
 |---|---|---|---|---|---|
 | Unused -> DRAFT | Create reviewed initial charter | create_charter | CharterForm, review step | creates reviewed charter wrapper + canonical detail reload | Local test PASS; browser transaction PENDING |
 | DRAFT -> ACTIVE | Approve baseline | ratify | CharterDetail contextual action | ratify exact digest/target + finality/reload | Local test PASS; browser transaction PENDING |
-| ACTIVE -> REVIEWABLE | Lock amendment purse | propose_amendment | AmendmentForm, complete replacement review | complete terms/current binding/exact 2 GEN + reload | Local test PASS; real SDK/browser PENDING |
-| REVIEWABLE -> CONSENT_REQUIRED | Review impacts | review | ProposalDetail | exact review target + finality/reload | Local test PASS; independent finalized consensus PENDING |
+| ACTIVE -> REVIEWABLE | Lock amendment purse | propose_amendment | AmendmentForm, complete replacement review | complete terms/current binding/exact 2 GEN + reload | Local real-SDK test PASS; script-signed 2 GEN write finalized; extension browser PENDING |
+| REVIEWABLE -> CONSENT_REQUIRED | Review impacts | review | ProposalDetail | exact review target + finality/reload | Local test PASS; independent script-signed consensus finalized; extension browser PENDING |
 | RETRYABLE -> review | Retry | review | ProposalDetail contextual retry | canonical retry state selects review + reload | Local test PASS; browser retry proof PENDING |
 | CONSENT_REQUIRED -> ADOPTED | Give affected assent | consent | ProposalDetail | exact proposed digest and contextual eligibility | Local test PASS; browser transaction PENDING |
 | CONSENT_REQUIRED -> REJECTED | Decline | reject | ProposalDetail | exact digest/refusal + reload | Local test PASS; browser transaction PENDING |
 | Live -> EXPIRED | Recover purse | expire | ProposalDetail | exact expiry target + reload | Local test PASS; time-bound browser proof PENDING |
 | DRAFT -> EXPIRED | Close unratified charter | expire_charter | CharterDetail | expired closure target + reload | Local test PASS; browser proof PENDING |
-| Credit -> withdrawn | Withdraw GEN | withdraw | Account | exact charter/value-zero input + reload | Local test PASS; child receipt/native balance/browser proof PENDING |
+| Credit -> withdrawn | Withdraw GEN | withdraw | Account | exact charter/value-zero input + reload | Local test PASS; three finalized child receipts and exact balance decreases PASS; extension browser PENDING |
 | Any | Disconnect/reconnect/read/search/help | No write | Persistent navigation/WalletContext/Charters/Help | explicit provider selection, disconnect, unavailable, search/read error routes | Local tests + wallet-less browser PASS; genuine extension-wallet PENDING |
 
 ## Evidence policy
@@ -306,13 +306,13 @@ Test-first write implementation must demonstrate missing authorization/time/reco
 
 | Claim | Contract method/state | View/read | Test | Network evidence |
 |---|---|---|---|---|
-| Three members agree to exact baseline | create_charter/ratify DRAFT->ACTIVE | get_charter/get_actions | baseline origin/digest/isolation/time tripwires | Planned studio-dev/lifecycle.json baseline writes+finalized reads; PENDING |
-| Neutral impact-derived consent | review plus normalized complete impacts | get_proposal/get_attempt | malicious roots/coverage/semantic replay | Planned consensus verdict safe allowlist/current proposal; PENDING |
-| Affected members decide canonical revision | consent/reject; exact digest/base, ADOPTED/REJECTED | get_charter/get_proposal | wrong/unaffected/duplicate/stale/time/accounting | Planned finalized revision/assent/refusal reads; PENDING |
-| Every purse has a destination | propose_amendment/expire/refusal/adoption credits | get_credit/get_accounting | all branches, conservation, retry/expiry negative | Planned 2 GEN lifecycle/refund zero-liability evidence; PENDING |
-| Withdrawal actually transfers GEN | withdraw debit + EVM message | get_credit/get_accounting plus native balance | debit/zero/owner/interface/static metadata | Planned successful child receipt + exact native contract balance decrease; PENDING |
-| Full honest browser product | Typed adapter and 8 routes/real selected EVM provider | Canonical reload after each successful finalization | 23 baseline frontend tests; real SDK and browser checks required | Planned browser signed lifecycle/local and production CORS; PENDING |
-| Reusable primitive | Documented 9 writes/8 views; one state owner | Canonical version/consent interface | Interface/schema test and native adapter | Planned deployed schema + reusable adapter evidence; PENDING |
+| Three members agree to exact baseline | create_charter/ratify DRAFT->ACTIVE | get_charter/get_actions | baseline origin/digest/isolation/time tripwires | studio-dev/lifecycle.json: create/ratify-A/B/C, FINALIZED SUCCESS; lifecycle-acceptance.json |
+| Neutral impact-derived consent | review plus normalized complete impacts | get_proposal/get_attempt | malicious roots/coverage/semantic replay | lifecycle.json review-adopt/review-refuse; dynamic one-based canonical attempts in lifecycle-acceptance.json |
+| Affected members decide canonical revision | consent/reject; exact digest/base, ADOPTED/REJECTED | get_charter/get_proposal | wrong/unaffected/duplicate/stale/time/accounting | lifecycle.json consent-B/reject-B; version 2 adoption and retained version on refusal |
+| Every purse has a destination | propose_amendment/expire/refusal/adoption credits | get_credit/get_accounting | all branches, conservation, retry/expiry negative | lifecycle-acceptance.json: three 2 GEN purses, funded=withdrawn=6 GEN, locked=credits=0 GEN |
+| Withdrawal actually transfers GEN | withdraw debit + EVM message | get_credit/get_accounting plus native balance | debit/zero/owner/interface/static metadata | Three finalized native children, exact 2 GEN balance decrease each, final native 0 GEN; LIFECYCLE.md |
+| Full honest browser product | Typed adapter and 8 routes/real selected EVM provider | Canonical reload after each successful finalization | 37 frontend tests including real SDK; product/control/finality/reload coverage | Local and production CORS/canonical reads PASS; extension-wallet signed lifecycle PENDING_REAL_EVIDENCE |
+| Reusable primitive | Documented 9 writes/8 views; one state owner | Canonical version/consent interface | Interface/schema test and native adapter | deployment.json + Explorer SUCCESS/schema; SDK adapter and all nine script-signed writes finalized |
 
 ## Analogue and differentiation matrix
 
@@ -354,7 +354,7 @@ Evidence belongs only in `docs/evidence/studio-dev/`; local tests in `docs/evide
 
 ## Honest limitations and evidence status
 
-Local Phase 3A/3B: TypeScript, 23 frontend tests and build pass; wallet-less browser form/modal/responsive/contrast checks pass. Target-runtime selection probe: two leader simulations SUCCESS, source fetch bounded/200; not independent-validator consensus. Actual deployment, network lifecycle, transfer, real SDK account compatibility, extension-browser wallet, production, CI and submission are PENDING. V1 bounds/constitutive-only authority above remain explicit even after completion. No legal advice or real-world enforcement is asserted.
+Initial Phase 3A/3B baseline: 23 frontend tests, TypeScript/build and wallet-less form/modal/responsive/contrast checks passed. Current validation: 103 direct tests, 24 tooling tests and 37 frontend tests, recognized single contract, TypeScript/build. Studio Dev: 17 finalized lifecycle parents, three finalized 2 GEN native children, all nine writes, version 2, funded/withdrawn 6 GEN and final native balance 0 GEN. Production browser canonical reads, HTTP/body/root, chain and fee proxy pass. CI runs the same checks on public commits; current-run evidence is checked separately at the final audit. Extension-wallet browser execution and final submission remain PENDING_REAL_EVIDENCE. Target-runtime selection leader simulations are not relabeled independent-validator consensus; the live reviews have their own finalized receipts. V1 constitutive-only bounds remain explicit. No legal advice, external adoption or real-world enforcement is asserted.
 
 ## Kill criteria
 

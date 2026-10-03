@@ -5,6 +5,6 @@
   "dateLocale": "en",
   "naturalEnglishReview": "PASS",
   "technicalEnumsAddressesUrlsPreserved": true,
-  "buildCheck": "npm run check PASS: 103 direct + 21 tooling + 37 frontend",
+  "buildCheck": "npm run check PASS: 103 direct + 24 tooling + 37 frontend",
   "rootKnowledgeExcluded": true
 }

@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-03",
+  "result": "READY",
+  "platform": "Vercel",
+  "projectName": "consent-delta-genlayer",
+  "target": "production",
+  "url": "https://consent-delta-genlayer.vercel.app",
+  "deploymentId": "dpl_9crGRR9HP13ojyuXaJRo7j7kcMMv",
+  "sourceCommit": "f03255d9c2116d49f12ee9666b1676a31b919471",
+  "rootDirectory": "frontend",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "publicEnvironment": { "VITE_CONTRACT_ADDRESS": "0x18F1689CE9241894433F44b41989C46E45a13DC5" },
+  "proxyFunction": "api/genlayer-rpc",
+  "cliUploadDryRun": { "result": "PASS", "sourceFiles": 20, "secretsOrCachesIncluded": false },
+  "verificationCommand": "vercel inspect consent-delta-genlayer-36xjl10uv-duckys-projects-bc83c6a0.vercel.app --wait --timeout 60s"
+}

@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-03",
+  "result": "PASS",
+  "repository": "https://github.com/duclucky/consent-delta-genlayer",
+  "visibility": "PUBLIC",
+  "firstPublicCommit": "61d8e1de7386ffccb3feed93a7643471cb107512",
+  "firstPushCommits": 7,
+  "historicalPublicAllowlist": "PASS",
+  "stagedPublicAllowlist": "PASS",
+  "exactPrivateEnvironmentMaterialScan": "PASS",
+  "productionBundleSecretScan": "PASS",
+  "ignoredLocalFilesPreserved": true,
+  "commands": ["git rev-parse --show-toplevel", "git status --short", "git diff --cached --name-only", "git ls-files", "git rev-list --count HEAD", "git ls-remote origin refs/heads/main", "gh repo view duclucky/consent-delta-genlayer --json nameWithOwner,isPrivate,url,defaultBranchRef"]
+}
